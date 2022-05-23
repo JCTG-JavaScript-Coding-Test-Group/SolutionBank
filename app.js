@@ -1,4 +1,5 @@
 import { SearchableList } from './components/Search/SearchableList.js';
+import { SearchInput } from './components/Search/SearchInput.js';
 
 // const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
 const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
@@ -18,13 +19,13 @@ const getFileContent = async (level, fileName) => {
   return data;
 };
 
-const renderSearchBox = $container => {
-  const $searchBox = document.createElement('input');
-  $searchBox.setAttribute('type', 'search');
-  $searchBox.setAttribute('id', 'search-box');
-  $searchBox.setAttribute('placeholder', '문제 이름을 검색하세요.');
-  $container.appendChild($searchBox);
-};
+// const renderSearchBox = $container => {
+//   const $searchBox = document.createElement('input');
+//   $searchBox.setAttribute('type', 'search');
+//   $searchBox.setAttribute('id', 'search-box');
+//   $searchBox.setAttribute('placeholder', '문제 이름을 검색하세요.');
+//   $container.appendChild($searchBox);
+// };
 
 // const renderFileList = async $container => {
 //   const $fileListContainer = document.createElement('div');
@@ -101,7 +102,9 @@ const createFuzzyMatcher = input => {
 
 const init = async () => {
   const $searchSection = document.querySelector('.search-section');
-  renderSearchBox($searchSection);
+  const searchInput = new SearchInput({ $target: $searchSection });
+  searchInput.render();
+  // renderSearchBox($searchSection);
   const searchableList = new SearchableList({ $target: $searchSection });
   await searchableList.render();
   // await renderFileList($searchSection);
