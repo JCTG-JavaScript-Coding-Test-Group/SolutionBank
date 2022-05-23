@@ -1,15 +1,18 @@
-const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
-const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
-const TOTAL_LEVEL_CNT = 5;
+import { SearchableList } from './components/Search/SearchableList.js';
 
-const getFileList = async level => {
-  const url = GET_FILE_LIST_BASE_URL + `level-${level}`;
-  const response = await fetch(url);
-  const data = response.json();
-  return data;
-};
+// const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
+const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
+// const TOTAL_LEVEL_CNT = 5;
+
+// const getFileList = async level => {
+//   const url = GET_FILE_LIST_BASE_URL + `level-${level}`;
+//   const response = await fetch(url);
+//   const data = response.json();
+//   return data;
+// };
 
 const getFileContent = async (level, fileName) => {
+  const url = GET_FILE_CONTENT_BASE_URL + `/level-${level}` + `/${fileName}`;
   const response = await fetch(url);
   const data = await response.text();
   return data;
@@ -23,27 +26,27 @@ const renderSearchBox = $container => {
   $container.appendChild($searchBox);
 };
 
-const renderFileList = async $container => {
-  const $fileListContainer = document.createElement('div');
-  $fileListContainer.classList.add('file-list-container');
-  for (let level = 1; level <= TOTAL_LEVEL_CNT; level++) {
-    const fileList = await getFileList(level);
-    const $fileList = document.createElement('ul');
-    $fileList.classList.add('file-list', `level-${level}`);
-    $fileList.innerHTML = `[level ${level}]`;
-    $fileListContainer.appendChild($fileList);
-    fileList.forEach(e => {
-      if (e.name === '00-해답-예시.js') return;
-      const element = document.createElement('li');
-      element.classList.add('file-list-item', e.name);
-      element.innerHTML = e.name
-        .slice(0, e.name.length - 3)
-        .replaceAll('-', ' ');
-      $fileList.appendChild(element);
-    });
-  }
-  $container.appendChild($fileListContainer);
-};
+// const renderFileList = async $container => {
+//   const $fileListContainer = document.createElement('div');
+//   $fileListContainer.classList.add('file-list-container');
+//   for (let level = 1; level <= TOTAL_LEVEL_CNT; level++) {
+//     const fileList = await getFileList(level);
+//     const $fileList = document.createElement('ul');
+//     $fileList.classList.add('file-list', `level-${level}`);
+//     $fileList.innerHTML = `[level ${level}]`;
+//     $fileListContainer.appendChild($fileList);
+//     fileList.forEach(e => {
+//       if (e.name === '00-해답-예시.js') return;
+//       const element = document.createElement('li');
+//       element.classList.add('file-list-item', e.name);
+//       element.innerHTML = e.name
+//         .slice(0, e.name.length - 3)
+//         .replaceAll('-', ' ');
+//       $fileList.appendChild(element);
+//     });
+//   }
+//   $container.appendChild($fileListContainer);
+// };
 
 const textProcess = text => {
   const processedText = text.replace(/\n/g, '<br />');
@@ -99,7 +102,9 @@ const createFuzzyMatcher = input => {
 const init = async () => {
   const $searchSection = document.querySelector('.search-section');
   renderSearchBox($searchSection);
-  await renderFileList($searchSection);
+  const searchableList = new SearchableList({ $target: $searchSection });
+  await searchableList.render();
+  // await renderFileList($searchSection);
 
   const $searchbox = document.getElementById('search-box');
   const $fileListContainer = document.querySelector('.file-list-container');
