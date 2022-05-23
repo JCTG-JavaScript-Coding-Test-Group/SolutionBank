@@ -1,9 +1,9 @@
 # 프로그래머스 해설 사이트
-## 개발 전 필수 확인!
+## ✋ 개발 전 필수 확인!
 1. `npm install`을 통해 개발 종속 패키지들 설치
-2. PR 시 project, milestone, Reviewr, assignee 설정 필수
+2. PR 시 project, milestone, reviewer, assignee 설정 필수
 
-## 커밋 컨벤션
+## 📐 커밋 컨벤션
 ### 커밋 예시
 - `feat: 검색 시 초성 검색이 가능하도록 구현`
 - `refactor: 검색 결과 배열 반환 함수를 utils 폴더로 분리`
