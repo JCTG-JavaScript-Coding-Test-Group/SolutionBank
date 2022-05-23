@@ -2,6 +2,8 @@
 ## ✋ 개발 전 필수 확인!
 1. `npm install`을 통해 개발 종속 패키지들 설치
 2. PR 시 project, milestone, reviewer, assignee 설정 필수
+3. PR 시 변경 사항 설명 필수
+
 
 ## 📐 커밋 컨벤션
 ### 커밋 예시
