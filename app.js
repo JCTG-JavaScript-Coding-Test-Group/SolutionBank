@@ -2,66 +2,7 @@ import { SearchableList } from './components/Search/SearchableList.js';
 import { SearchInput } from './components/Search/SearchInput.js';
 import { SearchResult } from './components/Search/SearchResult.js';
 
-// const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
-// const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
-// const TOTAL_LEVEL_CNT = 5;
-
-// const getFileList = async level => {
-//   const url = GET_FILE_LIST_BASE_URL + `level-${level}`;
-//   const response = await fetch(url);
-//   const data = response.json();
-//   return data;
-// };
-
-// const getFileContent = async (level, fileName) => {
-//   const url = GET_FILE_CONTENT_BASE_URL + `/level-${level}` + `/${fileName}`;
-//   const response = await fetch(url);
-//   const data = await response.text();
-//   return data;
-// };
-
-// const renderSearchBox = $container => {
-//   const $searchBox = document.createElement('input');
-//   $searchBox.setAttribute('type', 'search');
-//   $searchBox.setAttribute('id', 'search-box');
-//   $searchBox.setAttribute('placeholder', '문제 이름을 검색하세요.');
-//   $container.appendChild($searchBox);
-// };
-
-// const renderFileList = async $container => {
-//   const $fileListContainer = document.createElement('div');
-//   $fileListContainer.classList.add('file-list-container');
-//   for (let level = 1; level <= TOTAL_LEVEL_CNT; level++) {
-//     const fileList = await getFileList(level);
-//     const $fileList = document.createElement('ul');
-//     $fileList.classList.add('file-list', `level-${level}`);
-//     $fileList.innerHTML = `[level ${level}]`;
-//     $fileListContainer.appendChild($fileList);
-//     fileList.forEach(e => {
-//       if (e.name === '00-해답-예시.js') return;
-//       const element = document.createElement('li');
-//       element.classList.add('file-list-item', e.name);
-//       element.innerHTML = e.name
-//         .slice(0, e.name.length - 3)
-//         .replaceAll('-', ' ');
-//       $fileList.appendChild(element);
-//     });
-//   }
-//   $container.appendChild($fileListContainer);
-// };
-
-const textProcess = text => {
-  const processedText = text.replace(/\n/g, '<br />');
-  return processedText;
-};
-
-// const renderFile = async (level, fileName) => {
-//   const $container = document.querySelector('code');
-//   const fileContent = await getFileContent(level, fileName);
-//   const fileContentArr = textProcess(fileContent);
-//   $container.innerHTML = fileContentArr;
-// };
-
+//TODO: 문자열 슬라이싱 관련 함수, 별도의 폴더로 분리
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const ch2pattern = ch => {
@@ -101,14 +42,13 @@ const createFuzzyMatcher = input => {
   return new RegExp(pattern);
 };
 
+//TODO: app.js 내에서 DOM 구조가 그려질 수 있도록 수정, 현재는 index.html 에서 app.js 가 아닌 곳에 하드코딩되어있음
 const init = async () => {
   const $searchSection = document.querySelector('.search-section');
   const searchInput = new SearchInput({ $target: $searchSection });
   searchInput.render();
-  // renderSearchBox($searchSection);
   const searchableList = new SearchableList({ $target: $searchSection });
   await searchableList.render();
-  // await renderFileList($searchSection);
 
   const $searchbox = document.getElementById('search-box');
   const $fileListContainer = document.querySelector('.file-list-container');
@@ -139,7 +79,6 @@ const init = async () => {
       fileName,
     });
     searchResult.render();
-    // renderFile(level, fileName);
   });
 };
 
