@@ -1,8 +1,9 @@
 import { SearchableList } from './components/Search/SearchableList.js';
 import { SearchInput } from './components/Search/SearchInput.js';
+import { SearchResult } from './components/Search/SearchResult.js';
 
 // const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
-const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
+// const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisneverodd/programmers-coding-test/main/`;
 // const TOTAL_LEVEL_CNT = 5;
 
 // const getFileList = async level => {
@@ -12,12 +13,12 @@ const GET_FILE_CONTENT_BASE_URL = `https://raw.githubusercontent.com/codeisnever
 //   return data;
 // };
 
-const getFileContent = async (level, fileName) => {
-  const url = GET_FILE_CONTENT_BASE_URL + `/level-${level}` + `/${fileName}`;
-  const response = await fetch(url);
-  const data = await response.text();
-  return data;
-};
+// const getFileContent = async (level, fileName) => {
+//   const url = GET_FILE_CONTENT_BASE_URL + `/level-${level}` + `/${fileName}`;
+//   const response = await fetch(url);
+//   const data = await response.text();
+//   return data;
+// };
 
 // const renderSearchBox = $container => {
 //   const $searchBox = document.createElement('input');
@@ -54,12 +55,12 @@ const textProcess = text => {
   return processedText;
 };
 
-const renderFile = async (level, fileName) => {
-  const $container = document.querySelector('code');
-  const fileContent = await getFileContent(level, fileName);
-  const fileContentArr = textProcess(fileContent);
-  $container.innerHTML = fileContentArr;
-};
+// const renderFile = async (level, fileName) => {
+//   const $container = document.querySelector('code');
+//   const fileContent = await getFileContent(level, fileName);
+//   const fileContentArr = textProcess(fileContent);
+//   $container.innerHTML = fileContentArr;
+// };
 
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -131,7 +132,14 @@ const init = async () => {
     $fileTitle.innerHTML = e.target.innerText;
     const level = e.target.parentNode.classList[1].slice(-1);
     const fileName = e.target.classList[1];
-    renderFile(level, fileName);
+    const $container = document.querySelector('code');
+    const searchResult = new SearchResult({
+      $target: $container,
+      level,
+      fileName,
+    });
+    searchResult.render();
+    // renderFile(level, fileName);
   });
 };
 
