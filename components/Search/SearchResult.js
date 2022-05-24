@@ -13,6 +13,7 @@ export function SearchResult({ $target, level, fileName }) {
   this.render = async () => {
     const fileContent = await getFileContent(level, fileName);
     const fileContentArr = textProcess(fileContent);
+    // const fileContentArr = fileContent;
     $target.innerHTML = fileContentArr;
   };
 }

@@ -102,7 +102,17 @@ const createFuzzyMatcher = input => {
 };
 
 const init = async () => {
-  const $searchSection = document.querySelector('.search-section');
+  const content = document.querySelector('.app');
+  const $searchSection = document.createElement('div');
+  $searchSection.className = 'search-section';
+  const $resultSection = document.createElement('div');
+  $resultSection.className = 'result-section';
+  $resultSection.innerHTML = `
+    <div class="file-title"></div>
+    <pre class="line-numbers"><code class="language-js"></code></pre>
+  `;
+  content.append($searchSection, $resultSection);
+  // const $searchSection = document.querySelector('.search-section');
   const searchInput = new SearchInput({ $target: $searchSection });
   searchInput.render();
   // renderSearchBox($searchSection);
