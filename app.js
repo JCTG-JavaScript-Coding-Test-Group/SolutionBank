@@ -44,7 +44,17 @@ const createFuzzyMatcher = input => {
 
 //TODO: app.js 내에서 DOM 구조가 그려질 수 있도록 수정, 현재는 index.html 에서 app.js 가 아닌 곳에 하드코딩되어있음
 const init = async () => {
-  const $searchSection = document.querySelector('.search-section');
+  const content = document.querySelector('.app');
+  const $searchSection = document.createElement('div');
+  $searchSection.className = 'search-section';
+  const $resultSection = document.createElement('div');
+  $resultSection.className = 'result-section';
+  $resultSection.innerHTML = `
+    <div class="file-title"></div>
+    <pre class="line-numbers"><code class="language-js"></code></pre>
+  `;
+  content.append($searchSection, $resultSection);
+  // const $searchSection = document.querySelector('.search-section');
   const searchInput = new SearchInput({ $target: $searchSection });
   searchInput.render();
   const searchableList = new SearchableList({ $target: $searchSection });
