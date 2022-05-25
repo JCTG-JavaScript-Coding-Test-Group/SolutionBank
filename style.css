@@ -15,7 +15,7 @@ li {
   display: none !important;
 }
 
-.content {
+.app {
   display: flex;
   width: 1000px;
   margin: 0 auto;
