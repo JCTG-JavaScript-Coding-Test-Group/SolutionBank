@@ -33,16 +33,12 @@ export function SearchableList() {
           ).join('')}
         `;
     }
-    const $fileTitle = document.querySelector('.file-title');
 
     $fileListContainer.addEventListener('click', e => {
       if (e.target.tagName !== 'LI') return;
-      $fileTitle.innerHTML = e.target.innerText;
       const level = e.target.parentNode.classList[1].slice(-1);
       const fileName = e.target.classList[1];
-      const $container = document.querySelector('code');
       const $searchResult = new Index({
-        $target: $container,
         level,
         fileName,
       });
