@@ -1,4 +1,4 @@
-import { CreateFuzzyMatcher } from '../utils/KoreanFuzzy.js';
+import { CreateFuzzyMatcher } from '../utils/koreanFuzzy.js';
 
 export function SearchInput({ $target }) {
   this.render = () => {

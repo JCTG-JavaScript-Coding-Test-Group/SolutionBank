@@ -1,14 +1,8 @@
 //TODO: api 함수 및 상수 분리
 import { SearchResult } from '../../SearchResult/components/SearchResult.js';
+import { getFileList } from '../utils/api.js';
 
 const TOTAL_LEVEL_CNT = 5;
-const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
-const getFileList = async level => {
-  const url = GET_FILE_LIST_BASE_URL + `level-${level}`;
-  const response = await fetch(url);
-  const data = response.json();
-  return data;
-};
 export function SearchableList({ $target }) {
   this.render = async () => {
     const $fileListContainer = document.createElement('div');
