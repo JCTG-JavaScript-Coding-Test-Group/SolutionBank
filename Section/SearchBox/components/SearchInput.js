@@ -9,7 +9,8 @@ export function SearchInput() {
     const $fileListItem = document.querySelectorAll('.file-list-item');
 
     $searchInput.addEventListener('input', event => {
-      const query = $searchInput.value;
+      const $searchInputBox = document.getElementById('searchInput');
+      const query = $searchInputBox.value;
       const regex = CreateFuzzyMatcher(query.toLowerCase());
       for (let i = 0; i < $fileListItem.length; i++) {
         if (regex.test($fileListItem[i].textContent.toLowerCase())) {
