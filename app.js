@@ -1,5 +1,5 @@
-import { SearchableList } from './components/Search/SearchableList.js';
-import { SearchInput } from './components/Search/SearchInput.js';
+import { SearchableList } from './Section/SearchBox/components/SearchableList.js';
+import { SearchInput } from './Section/SearchBox/components/SearchInput.js';
 
 const $app = document.querySelector('.app');
 

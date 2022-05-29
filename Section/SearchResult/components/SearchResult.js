@@ -6,15 +6,10 @@ const getFileContent = async (level, fileName) => {
   const data = await response.text();
   return data;
 };
-const textProcess = text => {
-  const processedText = text.replace(/\n/g, '<br />');
-  return processedText;
-};
 
 export function SearchResult({ $target, level, fileName }) {
   this.render = async () => {
     const fileContent = await getFileContent(level, fileName);
-    // const fileContentArr = textProcess(fileContent);
     const fileContentArr = fileContent;
     $target.innerHTML = fileContentArr;
   };

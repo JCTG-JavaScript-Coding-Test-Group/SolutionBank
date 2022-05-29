@@ -466,7 +466,7 @@ var Prism = (function (_self) {
         return ret;
       },
 
-      // Traverse a language definition with Depth First Search
+      // Traverse a language definition with Depth First SearchBox
       DFS: function DFS(o, callback, type, visited) {
         visited = visited || {};
 
