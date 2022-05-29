@@ -1,0 +1,121 @@
+//화이트모드
+// $bg-color: #ecf0f1;
+// $border: #2c3a47;
+// $text-color: black;
+// $background: white;
+// $bg-btn1: #ff7675;
+// $bg-btn2: #e84393;
+
+//블랙모드
+$bg-color: #263747;
+$border: #25ccf7;
+$text-color: white;
+$background: #0c151c;
+$bg-btn1: #182c61;
+$bg-btn2: #3b3b98;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $background;
+}
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  color: $text-color;
+}
+
+.app {
+  display: flex;
+  width: 1000px;
+  margin: 0 auto;
+  //searchBox
+  .searchBox {
+    #searchInput {
+      width: 250px;
+      height: 50px;
+      background-color: $bg-color;
+      color: $text-color;
+      font-size: 18px;
+      border: 3px solid $border;
+      border-radius: 15px;
+      outline: none;
+      padding: 0 10px;
+      color: $text-color;
+    }
+    .searchableList {
+      .file-list {
+        cursor: pointer;
+        background-color: $bg-color;
+        padding: 10px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        color: $text-color;
+
+        li {
+          padding: 5px;
+          list-style: none;
+        }
+      }
+      .is-hidden {
+        display: none !important;
+      }
+    }
+  }
+  //searchResult
+  .searchResult {
+    margin-left: 50px;
+    width: 1000px;
+
+    .solutionNavigator {
+      display: flex;
+      float: right;
+      position: relative;
+      top: 55px;
+      .btnPrevSolution,
+      .btnNextSolution {
+        width: 150px;
+        height: 50px;
+        background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+        border-radius: 30px;
+        font-size: 25px;
+        font-weight: 700;
+        cursor: pointer;
+        color: $text-color;
+        border: 0;
+      }
+    }
+    .file-title {
+      text-align: center;
+      background-color: $bg-color;
+      height: 50px;
+      line-height: 50px;
+      font-size: 30px;
+      position: relative;
+      width: 100%;
+      border: 0;
+      border-radius: 15px;
+      outline: none;
+      color: $text-color;
+    }
+    .line-numbers {
+      background-color: $bg-color;
+      padding: 10px;
+      margin-top: 70px;
+      width: 100%;
+      overflow-x: auto;
+      border: 0;
+      border-radius: 15px;
+      outline: none;
+      .language-js {
+        color: $text-color;
+      }
+    }
+  }
+}
