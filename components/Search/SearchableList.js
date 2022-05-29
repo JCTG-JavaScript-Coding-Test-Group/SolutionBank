@@ -1,3 +1,4 @@
+//TODO: api 함수 및 상수 분리
 const TOTAL_LEVEL_CNT = 5;
 const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
 const getFileList = async level => {
