@@ -8,13 +8,29 @@ export default function SearchResult({ level, fileName }) {
     $searchResult.innerHTML = `
       ${SolutionNavigator()}
       <div class="file-title"></div>
-      <pre class="file-contents"><code></code></pre>
+      <div>
+        <pre class="code"></pre>
+        <button class="btn-copy">copy</button>
+      </div>
     `;
-    const $code = document.querySelector('code');
+    const $code = document.querySelector('.code');
     const solutions = splitCodeToSolutions(
       await getFileContent(level, fileName),
     );
     $code.innerHTML = solutions[page];
+
+    const $copyBtn = document.querySelector('.btn-copy');
+    $copyBtn.addEventListener('click', e => {
+      const t = document.createElement('textarea');
+      document.body.appendChild(t);
+      t.value = e.target.previousElementSibling.innerHTML
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"');
+      t.select();
+      document.execCommand('copy');
+      document.body.removeChild(t);
+    });
 
     const $navigator = document.querySelector('.solutionNavigator');
     $navigator.addEventListener('click', e => {
