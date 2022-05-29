@@ -14,6 +14,10 @@ export default function SearchResult({ level, fileName }) {
         <button class="btn-copy">copy</button>
       </div>
     `;
+
+    const $fileTitle = document.querySelector('.file-title');
+    $fileTitle.innerHTML = fileName.replace(/\-/g, ' ').replace('.js', '');
+
     const $code = document.querySelector('.code');
     const solutions = splitCodeToSolutions(
       await getFileContent(level, fileName),
