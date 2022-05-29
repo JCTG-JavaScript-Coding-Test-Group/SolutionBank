@@ -1,4 +1,6 @@
 //TODO: api 함수 및 상수 분리
+import { SearchResult } from './SearchResult.js';
+
 const TOTAL_LEVEL_CNT = 5;
 const GET_FILE_LIST_BASE_URL = `https://api.github.com/repos/codeisneverodd/programmers-coding-test/contents/`;
 const getFileList = async level => {
@@ -11,6 +13,7 @@ export function SearchableList({ $target }) {
   this.render = async () => {
     const $fileListContainer = document.createElement('div');
     $fileListContainer.classList.add('file-list-container');
+
     for (let level = 1; level <= TOTAL_LEVEL_CNT; level++) {
       const fileList = await getFileList(level);
       const $fileList = document.createElement('ul');
@@ -27,6 +30,22 @@ export function SearchableList({ $target }) {
         $fileList.appendChild(element);
       });
     }
+
     $target.appendChild($fileListContainer);
+    const $fileTitle = document.querySelector('.file-title');
+
+    $fileListContainer.addEventListener('click', e => {
+      if (e.target.tagName !== 'LI') return;
+      $fileTitle.innerHTML = e.target.innerText;
+      const level = e.target.parentNode.classList[1].slice(-1);
+      const fileName = e.target.classList[1];
+      const $container = document.querySelector('code');
+      const searchResult = new SearchResult({
+        $target: $container,
+        level,
+        fileName,
+      });
+      searchResult.render();
+    });
   };
 }
