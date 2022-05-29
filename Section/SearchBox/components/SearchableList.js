@@ -1,5 +1,5 @@
 //TODO: api 함수 및 상수 분리
-import { Index } from '../../SearchResult/components/index.js';
+import SearchResult from '../../SearchResult/components/index.js';
 import { getFileList } from '../utils/api.js';
 
 const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
@@ -38,7 +38,7 @@ export function SearchableList() {
       if (e.target.tagName !== 'LI') return;
       const level = e.target.parentNode.classList[1].slice(-1);
       const fileName = e.target.classList[1];
-      const $searchResult = new Index({
+      const $searchResult = new SearchResult({
         level,
         fileName,
       });

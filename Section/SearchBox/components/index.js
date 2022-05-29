@@ -1,7 +1,7 @@
 import { SearchInput } from './SearchInput.js';
 import { SearchableList } from './SearchableList.js';
 
-export function SearchBox() {
+export default function SearchBox() {
   const $searchBox = document.querySelector('.searchBox');
   this.render = async () => {
     $searchBox.innerHTML = `

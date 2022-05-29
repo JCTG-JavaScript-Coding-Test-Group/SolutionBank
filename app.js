@@ -1,4 +1,4 @@
-import { SearchBox } from './Section/SearchBox/components/index.js';
+import SearchBox from './Section/SearchBox/components/index.js';
 
 const $app = document.querySelector('.app');
 
