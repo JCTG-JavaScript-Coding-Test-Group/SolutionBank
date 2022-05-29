@@ -8,7 +8,7 @@ export default function SearchResult({ level, fileName }) {
     $searchResult.innerHTML = `
       ${SolutionNavigator()}
       <div class="file-title"></div>
-      <pre class="line-numbers" ><code class="language-js"></code></pre>
+      <pre class="file-contents"><code></code></pre>
     `;
     const $code = document.querySelector('code');
     const solutions = splitCodeToSolutions(
