@@ -1,5 +1,6 @@
 import { getFileContent } from '../utils/api.js';
 import { splitCodeToSolutions } from '../utils/format.js';
+import { copyText } from '../utils/copyText.js';
 
 export default function SearchResult({ level, fileName }) {
   let page = 0;
@@ -21,15 +22,8 @@ export default function SearchResult({ level, fileName }) {
 
     const $copyBtn = document.querySelector('.btn-copy');
     $copyBtn.addEventListener('click', e => {
-      const t = document.createElement('textarea');
-      document.body.appendChild(t);
-      t.value = e.target.previousElementSibling.innerHTML
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"');
-      t.select();
-      document.execCommand('copy');
-      document.body.removeChild(t);
+      const src = e.target.previousElementSibling;
+      copyText(src);
     });
 
     const $navigator = document.querySelector('.solutionNavigator');
