@@ -1,31 +1,38 @@
 //TODO: api 함수 및 상수 분리
-import { SearchResult } from '../../SearchResult/components/SearchResult.js';
+import { Index } from '../../SearchResult/components/index.js';
 import { getFileList } from '../utils/api.js';
 
-const TOTAL_LEVEL_CNT = 5;
-export function SearchableList({ $target }) {
+const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
+export function SearchableList() {
+  const $searchableList = document.querySelector('.searchableList');
   this.render = async () => {
-    const $fileListContainer = document.createElement('div');
-    $fileListContainer.classList.add('file-list-container');
-
-    for (let level = 1; level <= TOTAL_LEVEL_CNT; level++) {
-      const fileList = await getFileList(level);
-      const $fileList = document.createElement('ul');
-      $fileList.classList.add('file-list', `level-${level}`);
-      $fileList.innerHTML = `[level ${level}]`;
-      $fileListContainer.appendChild($fileList);
-      fileList.forEach(e => {
-        if (e.name === '00-해답-예시.js') return;
-        const element = document.createElement('li');
-        element.classList.add('file-list-item', e.name);
-        element.innerHTML = e.name
-          .slice(0, e.name.length - 3)
-          .replaceAll('-', ' ');
-        $fileList.appendChild(element);
-      });
+    $searchableList.innerHTML = `
+      <div class="file-list-container"></div>
+    `;
+    const $fileListContainer = document.querySelector('.file-list-container');
+    await fillList();
+    async function fillList() {
+      const fileList = {};
+      for (const level of POSSIBLE_LEVELS) {
+        fileList[level] = await getFileList(level);
+      }
+      $fileListContainer.innerHTML = `
+          ${POSSIBLE_LEVELS.map(
+            level => `
+          <ul class= "file-list ${`level-${level}`}">
+            [level ${level}]
+            ${fileList[level]
+              .map(
+                file =>
+                  `<li class="file-list-item ${`${file.name}`}">${file.name
+                    .slice(0, file.name.length - 3)
+                    .replaceAll('-', ' ')}</li>`,
+              )
+              .join('')}
+          </ul>`,
+          ).join('')}
+        `;
     }
-
-    $target.appendChild($fileListContainer);
     const $fileTitle = document.querySelector('.file-title');
 
     $fileListContainer.addEventListener('click', e => {
@@ -34,12 +41,12 @@ export function SearchableList({ $target }) {
       const level = e.target.parentNode.classList[1].slice(-1);
       const fileName = e.target.classList[1];
       const $container = document.querySelector('code');
-      const searchResult = new SearchResult({
+      const $searchResult = new Index({
         $target: $container,
         level,
         fileName,
       });
-      searchResult.render();
+      $searchResult.render();
     });
   };
 }

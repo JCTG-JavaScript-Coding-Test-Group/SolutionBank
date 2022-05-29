@@ -1,16 +1,15 @@
 import { CreateFuzzyMatcher } from '../utils/koreanFuzzy.js';
 
-export function SearchInput({ $target }) {
+export function SearchInput() {
   this.render = () => {
-    const $searchBox = document.createElement('input');
-    $searchBox.setAttribute('type', 'search');
-    $searchBox.setAttribute('id', 'search-input');
-    $searchBox.setAttribute('placeholder', '문제 이름을 검색하세요.');
-    $target.appendChild($searchBox);
+    const $searchInput = document.querySelector('.searchInput');
+    $searchInput.innerHTML = `
+      <input type="search" id="searchInput" placeholder="문제 이름을 검색하세요.">
+    `;
     const $fileListItem = document.querySelectorAll('.file-list-item');
 
-    $searchBox.addEventListener('input', event => {
-      const query = $searchBox.value;
+    $searchInput.addEventListener('input', event => {
+      const query = $searchInput.value;
       const regex = CreateFuzzyMatcher(query.toLowerCase());
       for (let i = 0; i < $fileListItem.length; i++) {
         if (regex.test($fileListItem[i].textContent.toLowerCase())) {
