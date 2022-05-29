@@ -14,7 +14,7 @@ h1 {
 
 .app {
   display: flex;
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 .app .searchBox #searchInput {
@@ -47,7 +47,7 @@ h1 {
 }
 .app .searchResult {
   margin-left: 50px;
-  width: 1000px;
+  width: 800px;
 }
 .app .searchResult .solutionNavigator {
   display: flex;
@@ -55,20 +55,26 @@ h1 {
   position: relative;
   top: 55px;
 }
-.app .searchResult .solutionNavigator .btnPrevSolution,
-.app .searchResult .solutionNavigator .btnNextSolution {
+.app .searchResult .solutionNavigator > button {
   width: 150px;
   height: 50px;
-  background: linear-gradient(45deg, #182c61, #3b3b98);
   text-align: center;
   line-height: 50px;
   margin: 5px;
   border-radius: 30px;
   font-size: 25px;
   font-weight: 700;
-  cursor: pointer;
-  color: white;
   border: 0;
+  background: linear-gradient(45deg, #182c61, #3b3b98);
+  color: white;
+}
+.app .searchResult .solutionNavigator .btnPrevSolution,
+.app .searchResult .solutionNavigator .btnNextSolution {
+  cursor: pointer;
+}
+.app .searchResult .solutionNavigator .btnPrevSolution-inactive,
+.app .searchResult .solutionNavigator .btnNextSolution-inactive {
+  opacity: 0.2;
 }
 .app .searchResult .file-title {
   text-align: center;
@@ -77,7 +83,6 @@ h1 {
   line-height: 50px;
   font-size: 30px;
   position: relative;
-  width: 100%;
   border: 0;
   border-radius: 15px;
   outline: none;
