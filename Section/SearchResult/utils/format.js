@@ -5,3 +5,7 @@ export function splitCodeToSolutions(code) {
   const formattedSolutions = solutions.map(solution => '//' + solution);
   return formattedSolutions.slice(1);
 }
+
+export function formattedFileName(fileName) {
+  return fileName.replace(/\-/g, ' ').replace('.js', '');
+}

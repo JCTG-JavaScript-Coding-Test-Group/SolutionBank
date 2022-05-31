@@ -1,18 +1,22 @@
-//화이트모드
+////화이트모드
 // $bg-color: #ecf0f1;
-// $border: #2c3a47;
-// $text-color: black;
-// $background: white;
-// $bg-btn1: #ff7675;
-// $bg-btn2: #e84393;
+ $bg-color: #E8F9FD;
+ $border: #2155CD;
+ $text-color: black;
+ $text-btn: white;
+ $background: white;
+ //$bg-btn1: #ff7675;
+ $bg-btn1: #0AA1DD;
+ //$bg-btn2: #e84393;
+ $bg-btn2: #2155CD;
 
 //블랙모드
-$bg-color: #263747;
-$border: #25ccf7;
-$text-color: white;
-$background: #0c151c;
-$bg-btn1: #182c61;
-$bg-btn2: #3b3b98;
+//$bg-color: #263747;
+//$border: #25ccf7;
+//$text-color: #ffffff;
+//$background: #0c151c;
+//$bg-btn1: #182c61;
+//$bg-btn2: #3b3b98;
 
 * {
   box-sizing: border-box;
@@ -20,6 +24,7 @@ $bg-btn2: #3b3b98;
 
 body {
   background: $background;
+  color: $text-color
 }
 h1 {
   text-align: center;
@@ -36,14 +41,13 @@ h1 {
     #searchInput {
       width: 250px;
       height: 50px;
-      background-color: $bg-color;
+      //background-color: $bg-color;
       color: $text-color;
       font-size: 18px;
       border: 3px solid $border;
       border-radius: 15px;
       outline: none;
       padding: 0 10px;
-      color: $text-color;
     }
     .searchableList {
       .file-list {
@@ -85,7 +89,7 @@ h1 {
         font-weight: 700;
         border: 0;
         background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
-        color: $text-color;
+        color: $text-btn;
       }
       .btnPrevSolution,
       .btnNextSolution {
@@ -97,6 +101,9 @@ h1 {
       }
     }
     .file-title {
+      display:flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       background-color: $bg-color;
       height: 50px;
@@ -109,7 +116,7 @@ h1 {
       outline: none;
       color: $text-color;
     }
-    .line-numbers {
+    .code {
       background-color: $bg-color;
       padding: 10px;
       margin-top: 70px;
@@ -118,9 +125,10 @@ h1 {
       border: 0;
       border-radius: 15px;
       outline: none;
-      .language-js {
-        color: $text-color;
-      }
+      color: $text-color;
+    }
+    .btn-copy{
+
     }
   }
 }
