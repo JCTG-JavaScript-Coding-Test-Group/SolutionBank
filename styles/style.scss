@@ -75,30 +75,30 @@ h1 {
   .searchResult {
     margin-left: 50px;
     width: 800px;
+    button {
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      margin: 5px;
+      border-radius: 30px;
+      font-size: 25px;
+      font-weight: 700;
+      border: 0;
+      background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
+      color: $text-btn;
+      cursor: pointer;
+    }
     .solutionNavigator {
       display: flex;
       float: right;
       position: relative;
       top: 55px;
-      > button {
+      button {
         width: 150px;
-        height: 50px;
-        text-align: center;
-        line-height: 50px;
-        margin: 5px;
-        border-radius: 30px;
-        font-size: 25px;
-        font-weight: 700;
-        border: 0;
-        background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
-        color: $text-btn;
-      }
-      .btnPrevSolution,
-      .btnNextSolution {
-        cursor: pointer;
       }
       .btnPrevSolution-inactive,
       .btnNextSolution-inactive {
+        cursor: none;
         opacity: 0.2;
       }
     }
@@ -130,6 +130,7 @@ h1 {
       color: $text-color;
     }
     .btn-copy {
+      width: 200px;
     }
   }
 }
