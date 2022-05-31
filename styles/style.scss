@@ -97,9 +97,7 @@ h1 {
     }
     .solutionNavigator {
       display: flex;
-      float: right;
-      position: relative;
-      top: 55px;
+      justify-content: end;
       button {
         width: 150px;
       }
@@ -110,16 +108,13 @@ h1 {
       }
     }
     .file-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin-bottom: 10px;
       text-align: center;
       background-color: $bg-color;
       height: 50px;
       line-height: 50px;
       font-size: 30px;
       position: relative;
-      // width: 100px;
       border: 0;
       border-radius: 15px;
       outline: none;
@@ -128,7 +123,7 @@ h1 {
     .code {
       background-color: $bg-color;
       padding: 10px;
-      margin-top: 70px;
+      margin: 0;
       width: 100%;
       overflow-x: auto;
       border: 0;

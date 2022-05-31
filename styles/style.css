@@ -81,9 +81,7 @@ h1 {
 
 .app .searchResult .solutionNavigator {
   display: flex;
-  float: right;
-  position: relative;
-  top: 55px;
+  justify-content: end;
 }
 
 .app .searchResult .solutionNavigator button {
@@ -97,9 +95,7 @@ h1 {
 }
 
 .app .searchResult .file-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 10px;
   text-align: center;
   background-color: #e8f9fd;
   height: 50px;
@@ -115,7 +111,7 @@ h1 {
 .app .searchResult .code {
   background-color: #e8f9fd;
   padding: 10px;
-  margin-top: 70px;
+  margin: 0;
   width: 100%;
   overflow-x: auto;
   border: 0;
