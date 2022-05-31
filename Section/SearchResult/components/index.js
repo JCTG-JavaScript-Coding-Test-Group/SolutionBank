@@ -17,27 +17,41 @@ export default function SearchResult({ level, fileName }) {
     $code.innerHTML = solutions[page];
 
     const $navigator = document.querySelector('.solutionNavigator');
+    let btnPrevSolution = document.querySelector('.btnPrevSolution-inactive');
+    let btnNextSolution = document.querySelector('.btnNextSolution');
+    if (page == 0) {
+      btnPrevSolution.className = 'btnPrevSolution-inactive';
+    }
     $navigator.addEventListener('click', e => {
       const $clickedButton = e.target.closest('button');
+
       if ($clickedButton.className.includes('btnPrevSolution')) {
         if (page > 0) {
           page -= 1;
           $code.innerHTML = solutions[page];
+          console.log(page);
         }
       }
       if ($clickedButton.className.includes('btnNextSolution')) {
         if (page < solutions.length - 1) {
           page += 1;
           $code.innerHTML = solutions[page];
+          console.log(page);
         }
       }
+      page !== 0
+        ? (btnPrevSolution.className = 'btnPrevSolution')
+        : (btnPrevSolution.className = 'btnPrevSolution-inactive');
+      page == solutions.length - 1
+        ? (btnNextSolution.className = 'btnNextSolution-inactive')
+        : (btnNextSolution.className = 'btnNextSolution');
     });
   };
 }
 function SolutionNavigator() {
   return `
     <div class="solutionNavigator">
-      <button class="btnPrevSolution">이전 문제</button>
+      <button class="btnPrevSolution-inactive">이전 문제</button>
       <button class="btnNextSolution">다음 문제</button>
     </div>`;
 }
