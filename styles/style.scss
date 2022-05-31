@@ -1,14 +1,14 @@
 ////화이트모드
 // $bg-color: #ecf0f1;
- $bg-color: #E8F9FD;
- $border: #2155CD;
- $text-color: black;
- $text-btn: white;
- $background: white;
- //$bg-btn1: #ff7675;
- $bg-btn1: #0AA1DD;
- //$bg-btn2: #e84393;
- $bg-btn2: #2155CD;
+$bg-color: #e8f9fd;
+$border: #2155cd;
+$text-color: black;
+$text-btn: white;
+$background: white;
+//$bg-btn1: #ff7675;
+$bg-btn1: #0aa1dd;
+//$bg-btn2: #e84393;
+$bg-btn2: #2155cd;
 
 //블랙모드
 //$bg-color: #263747;
@@ -24,7 +24,7 @@
 
 body {
   background: $background;
-  color: $text-color
+  color: $text-color;
 }
 h1 {
   text-align: center;
@@ -51,7 +51,7 @@ h1 {
     }
     .searchableList {
       .file-list {
-        cursor: pointer;
+        cursor: default;
         background-color: $bg-color;
         padding: 10px;
         border: 0;
@@ -60,6 +60,7 @@ h1 {
         color: $text-color;
 
         li {
+          cursor: pointer;
           padding: 5px;
           list-style: none;
         }
@@ -101,7 +102,7 @@ h1 {
       }
     }
     .file-title {
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -127,8 +128,7 @@ h1 {
       outline: none;
       color: $text-color;
     }
-    .btn-copy{
-
+    .btn-copy {
     }
   }
 }
