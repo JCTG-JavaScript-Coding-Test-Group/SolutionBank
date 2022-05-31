@@ -11,7 +11,7 @@ export default function SearchResult({ level, fileName }) {
       <div class="file-title"></div>
       <div>
         <pre class="code"></pre>
-        <button class="btn-copy">코드 복사하기</button><span class="isCopied">복사됨</span>
+        <button class="btn-copy">코드 복사하기</button><span class="isCopied"></span>
       </div>
     `;
 
@@ -29,7 +29,10 @@ export default function SearchResult({ level, fileName }) {
       const src = e.target.previousElementSibling;
       copyText(src);
       const isCopied = document.querySelector('.isCopied');
-      isCopied.textContent = ' 클립보드에 복사됨!';
+      isCopied.textContent = ' 📋 클립보드에 복사됨!';
+      setTimeout(() => {
+        isCopied.textContent = '';
+      }, 1000);
     });
 
     const $navigator = document.querySelector('.solutionNavigator');
