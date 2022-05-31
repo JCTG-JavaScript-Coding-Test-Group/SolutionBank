@@ -15,6 +15,7 @@ export function SearchableList() {
       const fileList = {};
       for (const level of POSSIBLE_LEVELS) {
         fileList[level] = await getFileList(level);
+        delete fileList[level][0];
       }
       $fileListContainer.innerHTML = `
           ${POSSIBLE_LEVELS.map(
