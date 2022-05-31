@@ -98,6 +98,9 @@ h1 {
       }
     }
     .file-title {
+      display:flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       background-color: $bg-color;
       height: 50px;

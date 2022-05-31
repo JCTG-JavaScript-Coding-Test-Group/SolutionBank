@@ -65,6 +65,9 @@ h1 {
       .app .searchResult .solutionNavigator .btnNextSolution-inactive {
         opacity: 0.2; }
     .app .searchResult .file-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       background-color: #263747;
       height: 50px;
