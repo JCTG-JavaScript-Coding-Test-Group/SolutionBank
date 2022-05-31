@@ -11,7 +11,7 @@ export default function SearchResult({ level, fileName }) {
       <div class="file-title"></div>
       <div>
         <pre class="code"></pre>
-        <button class="btn-copy">copy</button>
+        <button class="btn-copy">코드 복사하기</button><span class="isCopied">복사됨</span>
       </div>
     `;
 
@@ -28,6 +28,8 @@ export default function SearchResult({ level, fileName }) {
     $copyBtn.addEventListener('click', e => {
       const src = e.target.previousElementSibling;
       copyText(src);
+      const isCopied = document.querySelector('.isCopied');
+      isCopied.textContent = ' 클립보드에 복사됨!';
     });
 
     const $navigator = document.querySelector('.solutionNavigator');

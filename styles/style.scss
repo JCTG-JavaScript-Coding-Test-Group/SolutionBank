@@ -1,4 +1,4 @@
-//화이트모드
+////화이트모드
 // $bg-color: #ecf0f1;
 // $border: #2c3a47;
 // $text-color: black;
@@ -9,7 +9,7 @@
 //블랙모드
 $bg-color: #263747;
 $border: #25ccf7;
-$text-color: white;
+$text-color: #ffffff;
 $background: #0c151c;
 $bg-btn1: #182c61;
 $bg-btn2: #3b3b98;
@@ -20,6 +20,7 @@ $bg-btn2: #3b3b98;
 
 body {
   background: $background;
+  color: $text-color
 }
 h1 {
   text-align: center;
@@ -109,7 +110,7 @@ h1 {
       outline: none;
       color: $text-color;
     }
-    .line-numbers {
+    .code {
       background-color: $bg-color;
       padding: 10px;
       margin-top: 70px;
@@ -118,9 +119,10 @@ h1 {
       border: 0;
       border-radius: 15px;
       outline: none;
-      .language-js {
-        color: $text-color;
-      }
+      color: $text-color;
+    }
+    .btn-copy{
+
     }
   }
 }
