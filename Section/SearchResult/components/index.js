@@ -12,7 +12,7 @@ export default function SearchResult({ level, fileName }) {
         <button class="btnNextSolution">다음 해설</button>
       </div>
       <div class="file-title"></div>
-      <div>
+      <div class="wrapCode">
         <pre class="code"></pre>
         <button class="btn-copy">코드 복사하기</button><span class="isCopied"></span>
       </div>
