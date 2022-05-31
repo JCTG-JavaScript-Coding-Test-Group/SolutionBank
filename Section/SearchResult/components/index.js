@@ -70,7 +70,7 @@ export default function SearchResult({ level, fileName }) {
 function SolutionNavigator() {
   return `
     <div class="solutionNavigator">
-      <button class="btnPrevSolution-inactive">이전 문제</button>
-      <button class="btnNextSolution">다음 문제</button>
+      <button class="btnPrevSolution-inactive">이전 해설</button>
+      <button class="btnNextSolution">다음 해설</button>
     </div>`;
 }

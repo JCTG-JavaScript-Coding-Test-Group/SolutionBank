@@ -2,13 +2,13 @@
   box-sizing: border-box; }
 
 body {
-  background: #0c151c;
-  color: #ffffff; }
+  background: white;
+  color: black; }
 
 h1 {
   text-align: center;
   margin: 50px 0;
-  color: #ffffff; }
+  color: black; }
 
 .app {
   display: flex;
@@ -17,22 +17,22 @@ h1 {
   .app .searchBox #searchInput {
     width: 250px;
     height: 50px;
-    background-color: #263747;
-    color: #ffffff;
+    background-color: #ecf0f1;
+    color: black;
     font-size: 18px;
-    border: 3px solid #25ccf7;
+    border: 3px solid #2c3a47;
     border-radius: 15px;
     outline: none;
     padding: 0 10px;
-    color: #ffffff; }
+    color: black; }
   .app .searchBox .searchableList .file-list {
     cursor: pointer;
-    background-color: #263747;
+    background-color: #ecf0f1;
     padding: 10px;
     border: 0;
     border-radius: 15px;
     outline: none;
-    color: #ffffff; }
+    color: black; }
     .app .searchBox .searchableList .file-list li {
       padding: 5px;
       list-style: none; }
@@ -56,8 +56,8 @@ h1 {
         font-size: 25px;
         font-weight: 700;
         border: 0;
-        background: linear-gradient(45deg, #182c61, #3b3b98);
-        color: #ffffff; }
+        background: linear-gradient(45deg, #ff7675, #e84393);
+        color: black; }
       .app .searchResult .solutionNavigator .btnPrevSolution,
       .app .searchResult .solutionNavigator .btnNextSolution {
         cursor: pointer; }
@@ -69,7 +69,7 @@ h1 {
       align-items: center;
       justify-content: center;
       text-align: center;
-      background-color: #263747;
+      background-color: #ecf0f1;
       height: 50px;
       line-height: 50px;
       font-size: 30px;
@@ -77,9 +77,9 @@ h1 {
       border: 0;
       border-radius: 15px;
       outline: none;
-      color: #ffffff; }
+      color: black; }
     .app .searchResult .code {
-      background-color: #263747;
+      background-color: #ecf0f1;
       padding: 10px;
       margin-top: 70px;
       width: 100%;
@@ -87,6 +87,6 @@ h1 {
       border: 0;
       border-radius: 15px;
       outline: none;
-      color: #ffffff; }
+      color: black; }
 
 /*# sourceMappingURL=style.css.map */
