@@ -21,7 +21,7 @@ export function SearchableList() {
           ${POSSIBLE_LEVELS.map(
             level => `
           <ul class= "file-list ${`level-${level}`}">
-            [level ${level}]
+          [level ${level}]
             ${fileList[level]
               .map(
                 file =>

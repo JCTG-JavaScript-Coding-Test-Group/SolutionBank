@@ -1,22 +1,20 @@
 ////화이트모드
-// $bg-color: #ecf0f1;
- $bg-color: #E8F9FD;
- $border: #2155CD;
- $text-color: black;
- $text-btn: white;
- $background: white;
- //$bg-btn1: #ff7675;
- $bg-btn1: #0AA1DD;
- //$bg-btn2: #e84393;
- $bg-btn2: #2155CD;
+$bg-color: #e8f9fd;
+$border-levelTitle: #2155cd;
+$text-color: black;
+$text-btn: #ffffff;
+$background: #ffffff;
+$bg-btn1: #0aa1dd;
+$bg-btn2: #2155cd;
 
 //블랙모드
-//$bg-color: #263747;
-//$border: #25ccf7;
-//$text-color: #ffffff;
-//$background: #0c151c;
-//$bg-btn1: #182c61;
-//$bg-btn2: #3b3b98;
+// $bg-color: #263747;
+// $border-levelTitle: #25ccf7;
+// $text-color: #ffffff;
+// $text-btn: #ffffff;
+// $background: #0c151c;
+// $bg-btn1: #182c61;
+// $bg-btn2: #3b3b98;
 
 * {
   box-sizing: border-box;
@@ -24,12 +22,14 @@
 
 body {
   background: $background;
-  color: $text-color
+  color: $text-color;
 }
 h1 {
   text-align: center;
-  margin: 50px 0;
+  margin: 30px 0 60px 0;
+  padding: 20px 0;
   color: $text-color;
+  border-bottom: 4px solid $border-levelTitle;
 }
 
 .app {
@@ -39,26 +39,32 @@ h1 {
   //searchBox
   .searchBox {
     #searchInput {
-      width: 250px;
+      width: 280px;
       height: 50px;
-      //background-color: $bg-color;
+      background-color: $background;
       color: $text-color;
       font-size: 18px;
-      border: 3px solid $border;
+      font-weight: 700;
+      border: 3px solid $border-levelTitle;
       border-radius: 15px;
       outline: none;
       padding: 0 10px;
     }
     .searchableList {
       .file-list {
-        cursor: pointer;
         background-color: $bg-color;
         padding: 10px;
         border: 0;
         border-radius: 15px;
         outline: none;
         color: $text-color;
-
+        font-size: 18px;
+        font-weight: 700;
+        .levelTitle {
+          color: $border-levelTitle;
+          font-size: 22px;
+          font-weight: 700;
+        }
         li {
           padding: 5px;
           list-style: none;
@@ -78,17 +84,23 @@ h1 {
       float: right;
       position: relative;
       top: 55px;
+      button:first-child {
+        border-radius: 50px 15px 15px 50px;
+        background: linear-gradient(90deg, $bg-btn1, $bg-btn2);
+      }
+      button:last-child {
+        border-radius: 15px 50px 50px 15px;
+        background: linear-gradient(90deg, $bg-btn2, $bg-btn1);
+      }
       > button {
         width: 150px;
         height: 50px;
         text-align: center;
         line-height: 50px;
         margin: 5px;
-        border-radius: 30px;
         font-size: 25px;
         font-weight: 700;
         border: 0;
-        background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
         color: $text-btn;
       }
       .btnPrevSolution,
@@ -97,11 +109,11 @@ h1 {
       }
       .btnPrevSolution-inactive,
       .btnNextSolution-inactive {
-        opacity: 0.2;
+        opacity: 0.4;
       }
     }
     .file-title {
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -109,26 +121,58 @@ h1 {
       height: 50px;
       line-height: 50px;
       font-size: 30px;
+      font-weight: 700;
       position: relative;
-      // width: 100px;
       border: 0;
       border-radius: 15px;
       outline: none;
       color: $text-color;
     }
-    .code {
-      background-color: $bg-color;
-      padding: 10px;
-      margin-top: 70px;
-      width: 100%;
-      overflow-x: auto;
-      border: 0;
-      border-radius: 15px;
-      outline: none;
-      color: $text-color;
-    }
-    .btn-copy{
-
+    .wrapCode {
+      position: relative;
+      .code {
+        background-color: $bg-color;
+        padding: 10px;
+        margin-top: 70px;
+        width: 100%;
+        overflow-x: auto;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        color: $text-color;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .btn-copy {
+        width: 190px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+        font-size: 25px;
+        font-weight: 700;
+        border: 0;
+        background: linear-gradient(180deg, $bg-btn2, $bg-btn1);
+        color: $text-btn;
+        position: absolute;
+        top: -65px;
+        left: -5px;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      .isCopied {
+        position: absolute;
+        top: -60px;
+        left: 204px;
+        width: 200px;
+        line-height: 50px;
+        color: $text-color;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: $bg-color;
+        padding: 0 6px;
+        border-radius: 15px;
+      }
     }
   }
 }
