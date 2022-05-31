@@ -7,7 +7,10 @@ export default function SearchResult({ level, fileName }) {
   this.render = async () => {
     const $searchResult = document.querySelector('.searchResult');
     $searchResult.innerHTML = `
-      ${SolutionNavigator()}
+      <div class="solutionNavigator">
+        <button class="btnPrevSolution-inactive">이전 해설</button>
+        <button class="btnNextSolution">다음 해설</button>
+      </div>
       <div class="file-title"></div>
       <div>
         <pre class="code"></pre>
@@ -74,11 +77,4 @@ export default function SearchResult({ level, fileName }) {
       });
     }
   };
-}
-function SolutionNavigator() {
-  return `
-    <div class="solutionNavigator">
-      <button class="btnPrevSolution-inactive">이전 해설</button>
-      <button class="btnNextSolution">다음 해설</button>
-    </div>`;
 }
