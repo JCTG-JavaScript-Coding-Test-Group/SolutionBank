@@ -52,6 +52,8 @@ h1 {
     }
     .searchableList {
       .file-list {
+        font-size: 18px;
+        font-weight: 700;
         cursor: default;
         background-color: $bg-color;
         padding: 10px;
@@ -59,11 +61,16 @@ h1 {
         border-radius: 15px;
         outline: none;
         color: $text-color;
-
         li {
+          font-size: 16px;
+          font-weight: normal;
           cursor: pointer;
           padding: 5px;
           list-style: none;
+        }
+        :first-of-type {
+          border-top: 0.9px solid gray;
+          margin-top: 5px;
         }
       }
       .is-hidden {
