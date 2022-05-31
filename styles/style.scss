@@ -1,10 +1,14 @@
 ////화이트모드
- $bg-color: #ecf0f1;
- $border: #2c3a47;
+// $bg-color: #ecf0f1;
+ $bg-color: #E8F9FD;
+ $border: #2155CD;
  $text-color: black;
+ $text-btn: white;
  $background: white;
- $bg-btn1: #ff7675;
- $bg-btn2: #e84393;
+ //$bg-btn1: #ff7675;
+ $bg-btn1: #0AA1DD;
+ //$bg-btn2: #e84393;
+ $bg-btn2: #2155CD;
 
 //블랙모드
 //$bg-color: #263747;
@@ -37,14 +41,13 @@ h1 {
     #searchInput {
       width: 250px;
       height: 50px;
-      background-color: $bg-color;
+      //background-color: $bg-color;
       color: $text-color;
       font-size: 18px;
       border: 3px solid $border;
       border-radius: 15px;
       outline: none;
       padding: 0 10px;
-      color: $text-color;
     }
     .searchableList {
       .file-list {
@@ -86,7 +89,7 @@ h1 {
         font-weight: 700;
         border: 0;
         background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
-        color: $text-color;
+        color: $text-btn;
       }
       .btnPrevSolution,
       .btnNextSolution {
