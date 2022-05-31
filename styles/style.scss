@@ -1,7 +1,8 @@
 ////화이트모드
 // $bg-color: #ecf0f1;
 $bg-color: #e8f9fd;
-$border: #2155cd;
+$border1: #0aa1dd;
+$border2: #2155cd;
 $text-color: black;
 $text-btn: white;
 $background: white;
@@ -45,10 +46,13 @@ h1 {
       //background-color: $bg-color;
       color: $text-color;
       font-size: 18px;
-      border: 3px solid $border;
+      border: 3px solid $border1;
       border-radius: 15px;
       outline: none;
       padding: 0 10px;
+      &:focus {
+        border: 3px solid $border2;
+      }
     }
     .searchableList {
       .file-list {
