@@ -47,6 +47,9 @@ h1 {
   font-size: 22px;
   font-weight: 700;
 }
+.app .searchBox .searchableList .file-list .file-list-item {
+  cursor: pointer;
+}
 .app .searchBox .searchableList .file-list li {
   padding: 5px;
   list-style: none;
