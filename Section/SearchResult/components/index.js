@@ -1,6 +1,6 @@
-import { getFileContent } from '../utils/api.js';
-import { formattedFileName, splitCodeToSolutions } from '../utils/format.js';
-import { copyText } from '../utils/copyText.js';
+import { getFileContent } from "../utils/api.js";
+import { formattedFileName, splitCodeToSolutions } from "../utils/format.js";
+import { copyText } from "../utils/copyText.js";
 
 export default function SearchResult({ level, fileName }) {
   let page = 0;
@@ -9,7 +9,7 @@ export default function SearchResult({ level, fileName }) {
     $searchResult.innerHTML = `
       <div class="solutionNavigator">
         <button class="btnPrevSolution-inactive">이전 해설</button>
-        <button class="btnNextSolution">다음 해설</button>
+        <button class="btnNextSolution-inactive">다음 해설</button>
       </div>
       <div class="file-title"></div>
       <div class="wrapCode">
@@ -29,6 +29,10 @@ export default function SearchResult({ level, fileName }) {
     function setCurrentResult() {
       $fileTitle.innerHTML = formattedFileName(fileName);
       $code.innerHTML = solutions[page];
+      if(solutions.length < 2){
+        const $btnNextSolution = document.querySelector('.btnNextSolution-inactive')
+        $btnNextSolution.className = 'btnNextSolution'
+      }
     }
 
     function addCopyEvent() {
