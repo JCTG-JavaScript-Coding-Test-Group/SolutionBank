@@ -1,2 +1,5 @@
 /.idea
 /node_modules
+.prettierrc.json
+package-lock.json
+package.json
