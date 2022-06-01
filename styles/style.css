@@ -1,139 +1,90 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   background: white;
-  color: black;
-}
+  color: black; }
 
 h1 {
-  cursor: default;
   text-align: center;
   margin: 50px 0;
-  color: black;
-}
+  color: black; }
 
 .app {
   display: flex;
-  width: 1050px;
-  margin: 0 auto;
-}
+  width: 1200px;
+  margin: 0 auto; }
+  .app .searchBox #searchInput {
+    width: 250px;
+    height: 50px;
+    color: black;
+    font-size: 18px;
+    border: 3px solid #2155CD;
+    border-radius: 15px;
+    outline: none;
+    padding: 0 10px; }
+  .app .searchBox .searchableList .file-list {
+    cursor: pointer;
+    background-color: #E8F9FD;
+    padding: 10px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    color: black; }
+    .app .searchBox .searchableList .file-list li {
+      padding: 5px;
+      list-style: none; }
+  .app .searchBox .searchableList .is-hidden {
+    display: none !important; }
+  .app .searchResult {
+    margin-left: 50px;
+    width: 800px; }
+    .app .searchResult .solutionNavigator {
+      display: flex;
+      float: right;
+      position: relative;
+      top: 55px; }
+      .app .searchResult .solutionNavigator > button {
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+        border-radius: 30px;
+        font-size: 25px;
+        font-weight: 700;
+        border: 0;
+        background: linear-gradient(45deg, #0AA1DD, #2155CD);
+        color: white; }
+      .app .searchResult .solutionNavigator .btnPrevSolution,
+      .app .searchResult .solutionNavigator .btnNextSolution {
+        cursor: pointer; }
+      .app .searchResult .solutionNavigator .btnPrevSolution-inactive,
+      .app .searchResult .solutionNavigator .btnNextSolution-inactive {
+        opacity: 0.2; }
+    .app .searchResult .file-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #E8F9FD;
+      height: 50px;
+      line-height: 50px;
+      font-size: 30px;
+      position: relative;
+      border: 0;
+      border-radius: 15px;
+      outline: none;
+      color: black; }
+    .app .searchResult .code {
+      background-color: #E8F9FD;
+      padding: 10px;
+      margin-top: 70px;
+      width: 100%;
+      overflow-x: auto;
+      border: 0;
+      border-radius: 15px;
+      outline: none;
+      color: black; }
 
-.app .searchBox #searchInput {
-  width: 250px;
-  height: 50px;
-  color: black;
-  font-size: 18px;
-  border: 3px solid #0aa1dd;
-  border-radius: 15px;
-  outline: none;
-  padding: 0 10px;
-}
-
-.app .searchBox #searchInput:focus {
-  border: 3px solid #2155cd;
-}
-
-.app .searchBox .searchableList .file-list {
-  font-size: 20px;
-  font-weight: 700;
-  cursor: default;
-  background-color: #e8f9fd;
-  padding: 10px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  color: black;
-}
-
-.app .searchBox .searchableList .file-list li {
-  font-size: 16px;
-  font-weight: normal;
-  cursor: pointer;
-  padding: 5px;
-  list-style: none;
-}
-
-.app .searchBox .searchableList .file-list :first-of-type {
-  border-top: 0.9px solid gray;
-  margin-top: 5px;
-}
-
-.app .searchBox .searchableList .is-hidden {
-  display: none !important;
-}
-
-.app .searchResult {
-  margin-left: 50px;
-  width: 800px;
-}
-
-.app .searchResult button {
-  text-align: center;
-  margin: 5px;
-  border-radius: 30px;
-  font-size: 25px;
-  font-weight: 700;
-  border: 0;
-  background: linear-gradient(45deg, #0aa1dd, #2155cd);
-  color: white;
-  cursor: pointer;
-}
-
-.app .searchResult .solutionNavigator {
-  display: flex;
-  justify-content: end;
-}
-
-.app .searchResult .solutionNavigator button {
-  height: 50px;
-  width: 150px;
-  line-height: 50px;
-  font-size: 25px;
-}
-
-.app .searchResult .solutionNavigator .btnPrevSolution-inactive,
-.app .searchResult .solutionNavigator .btnNextSolution-inactive {
-  cursor: not-allowed;
-  opacity: 0.2;
-}
-
-.app .searchResult .file-title {
-  margin-bottom: 10px;
-  text-align: center;
-  background-color: #e8f9fd;
-  height: 50px;
-  line-height: 50px;
-  font-size: 30px;
-  position: relative;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  color: black;
-}
-
-.app .searchResult .code-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.app .searchResult .code-area .code {
-  background-color: #e8f9fd;
-  padding: 10px;
-  margin: 0;
-  width: 100%;
-  overflow-x: auto;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  color: black;
-}
-
-.app .searchResult .code-area .btn-copy {
-  height: 40px;
-  width: 150px;
-  line-height: 40px;
-  font-size: 20px;
-}
+/*# sourceMappingURL=style.css.map */
