@@ -1,14 +1,15 @@
 ////화이트모드
 // $bg-color: #ecf0f1;
- $bg-color: #E8F9FD;
- $border: #2155CD;
- $text-color: black;
- $text-btn: white;
- $background: white;
- //$bg-btn1: #ff7675;
- $bg-btn1: #0AA1DD;
- //$bg-btn2: #e84393;
- $bg-btn2: #2155CD;
+$bg-color: #e8f9fd;
+$border1: #0aa1dd;
+$border2: #2155cd;
+$text-color: black;
+$text-btn: white;
+$background: white;
+//$bg-btn1: #ff7675;
+$bg-btn1: #0aa1dd;
+//$bg-btn2: #e84393;
+$bg-btn2: #2155cd;
 
 //블랙모드
 //$bg-color: #263747;
@@ -24,9 +25,10 @@
 
 body {
   background: $background;
-  color: $text-color
+  color: $text-color;
 }
 h1 {
+  cursor: default;
   text-align: center;
   margin: 50px 0;
   color: $text-color;
@@ -34,7 +36,7 @@ h1 {
 
 .app {
   display: flex;
-  width: 1200px;
+  width: 1050px;
   margin: 0 auto;
   //searchBox
   .searchBox {
@@ -44,24 +46,35 @@ h1 {
       //background-color: $bg-color;
       color: $text-color;
       font-size: 18px;
-      border: 3px solid $border;
+      border: 3px solid $border1;
       border-radius: 15px;
       outline: none;
       padding: 0 10px;
+      &:focus {
+        border: 3px solid $border2;
+      }
     }
     .searchableList {
       .file-list {
-        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: default;
         background-color: $bg-color;
         padding: 10px;
         border: 0;
         border-radius: 15px;
         outline: none;
         color: $text-color;
-
         li {
+          font-size: 16px;
+          font-weight: normal;
+          cursor: pointer;
           padding: 5px;
           list-style: none;
+        }
+        :first-of-type {
+          border-top: 0.9px solid gray;
+          margin-top: 5px;
         }
       }
       .is-hidden {
@@ -73,62 +86,66 @@ h1 {
   .searchResult {
     margin-left: 50px;
     width: 800px;
+    button {
+      text-align: center;
+      margin: 5px;
+      border-radius: 30px;
+      font-size: 25px;
+      font-weight: 700;
+      border: 0;
+      background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
+      color: $text-btn;
+      cursor: pointer;
+    }
     .solutionNavigator {
       display: flex;
-      float: right;
-      position: relative;
-      top: 55px;
-      > button {
-        width: 150px;
+      justify-content: end;
+      button {
         height: 50px;
-        text-align: center;
+        width: 150px;
         line-height: 50px;
-        margin: 5px;
-        border-radius: 30px;
         font-size: 25px;
-        font-weight: 700;
-        border: 0;
-        background: linear-gradient(45deg, $bg-btn1, $bg-btn2);
-        color: $text-btn;
-      }
-      .btnPrevSolution,
-      .btnNextSolution {
-        cursor: pointer;
       }
       .btnPrevSolution-inactive,
       .btnNextSolution-inactive {
+        cursor: not-allowed;
         opacity: 0.2;
       }
     }
     .file-title {
-      display:flex;
-      align-items: center;
-      justify-content: center;
+      margin-bottom: 10px;
       text-align: center;
       background-color: $bg-color;
       height: 50px;
       line-height: 50px;
       font-size: 30px;
       position: relative;
-      // width: 100px;
       border: 0;
       border-radius: 15px;
       outline: none;
       color: $text-color;
     }
-    .code {
-      background-color: $bg-color;
-      padding: 10px;
-      margin-top: 70px;
-      width: 100%;
-      overflow-x: auto;
-      border: 0;
-      border-radius: 15px;
-      outline: none;
-      color: $text-color;
-    }
-    .btn-copy{
-
+    .code-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .code {
+        background-color: $bg-color;
+        padding: 10px;
+        margin: 0;
+        width: 100%;
+        overflow-x: auto;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        color: $text-color;
+      }
+      .btn-copy {
+        height: 40px;
+        width: 150px;
+        line-height: 40px;
+        font-size: 20px;
+      }
     }
   }
 }
