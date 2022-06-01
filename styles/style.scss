@@ -145,6 +145,7 @@ h1 {
         color: $text-color;
         font-size: 20px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+
       }
       .btn-copy {
         width: 190px;
@@ -172,7 +173,7 @@ h1 {
         color: $text-color;
         font-size: 18px;
         font-weight: 700;
-        background-color: $bg-color;
+        background-color: transparent;
         padding: 0 6px;
         border-radius: 15px;
       }
