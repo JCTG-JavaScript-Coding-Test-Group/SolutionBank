@@ -29,7 +29,7 @@ export default function SearchResult({ level, fileName }) {
     function setCurrentResult() {
       $fileTitle.innerHTML = formattedFileName(fileName);
       $code.innerHTML = solutions[page];
-      if(solutions.length < 2){
+      if(solutions.length > 1){
         const $btnNextSolution = document.querySelector('.btnNextSolution-inactive')
         $btnNextSolution.className = 'btnNextSolution'
       }
