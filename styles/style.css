@@ -17,7 +17,7 @@ h1 {
 
 .app {
   display: flex;
-  width: 1130px;
+  width: 1170px;
   margin: 0 auto;
 }
 .app .searchBox #searchInput {
@@ -32,9 +32,20 @@ h1 {
   outline: none;
   padding: 0 10px;
 }
+.app .searchBox .searchableList {
+  width: 320px;
+}
+.app .searchBox .searchableList .file-list-container {
+  max-height: 870px;
+  overflow: auto;
+  margin: 12px 0;
+}
 .app .searchBox .searchableList .file-list {
   background-color: #e8f9fd;
+  position: relative;
+  top: 0;
   padding: 10px;
+  margin: 0px 4px 8px 0;
   border: 0;
   border-radius: 15px;
   outline: none;
@@ -120,7 +131,8 @@ h1 {
   padding: 10px;
   margin-top: 70px;
   width: 100%;
-  overflow-x: auto;
+  max-height: 800px;
+  overflow: auto;
   border: 0;
   border-radius: 15px;
   outline: none;
