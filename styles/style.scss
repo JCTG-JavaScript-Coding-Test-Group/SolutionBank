@@ -6,6 +6,7 @@ $text-btn: #ffffff;
 $background: #ffffff;
 $bg-btn1: #0aa1dd;
 $bg-btn2: #2155cd;
+$bg-footer: #82ccdd;
 
 //블랙모드
 // $bg-color: #263747;
@@ -36,6 +37,7 @@ h1 {
   display: flex;
   width: 1170px;
   margin: 0 auto;
+  justify-content: center;
   //searchBox
   .searchBox {
     #searchInput {
@@ -52,8 +54,9 @@ h1 {
     }
     .searchableList {
       width:320px;
+
       .file-list-container {
-        max-height:870px;
+        max-height:858px;
         overflow: auto;
         margin:12px 0;
       }
@@ -191,4 +194,48 @@ h1 {
       }
     }
   }
+  //footer
+  .footerBox{
+    position:absolute;
+    top:1200px;
+    min-width:1200px;
+    width:100%;
+    background: $bg-footer;
+    padding:10px;
+    font-size: 18px;
+    font-weight: 550;
+    font-family:fantasy; 
+    overflow:hidden;
+  .footer {
+    .footerTitle {
+      color:$bg-btn2;
+    }
+    div {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      .footerTitle {
+        margin-right:10px;
+      }
+      a{
+        padding: 0 5px;
+        text-decoration-line: none;
+        color: inherit;
+      }
+    }
+  }
+  .copyRight {
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    .footerLogo {
+      height:50px;
+      max-width:50px;
+      margin:0 10px 8px 4px;
+      overflow: hidden;
+      font-size: 14px;
+      cursor:pointer;
+    }
+  }
+}
 }

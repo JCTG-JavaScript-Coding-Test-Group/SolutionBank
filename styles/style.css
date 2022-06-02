@@ -19,6 +19,7 @@ h1 {
   display: flex;
   width: 1170px;
   margin: 0 auto;
+  justify-content: center;
 }
 .app .searchBox #searchInput {
   width: 280px;
@@ -36,7 +37,7 @@ h1 {
   width: 320px;
 }
 .app .searchBox .searchableList .file-list-container {
-  max-height: 870px;
+  max-height: 858px;
   overflow: auto;
   margin: 12px 0;
 }
@@ -169,6 +170,47 @@ h1 {
   background-color: transparent;
   padding: 0 6px;
   border-radius: 15px;
+}
+.app .footerBox {
+  position: absolute;
+  top: 1200px;
+  min-width: 1200px;
+  width: 100%;
+  background: #82ccdd;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 550;
+  font-family: fantasy;
+  overflow: hidden;
+}
+.app .footerBox .footer .footerTitle {
+  color: #2155cd;
+}
+.app .footerBox .footer div {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.app .footerBox .footer div .footerTitle {
+  margin-right: 10px;
+}
+.app .footerBox .footer div a {
+  padding: 0 5px;
+  text-decoration-line: none;
+  color: inherit;
+}
+.app .footerBox .copyRight {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.app .footerBox .copyRight .footerLogo {
+  height: 50px;
+  max-width: 50px;
+  margin: 0 10px 8px 4px;
+  overflow: hidden;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
