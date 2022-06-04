@@ -41,7 +41,7 @@ h1 {
   //searchBox
   .searchBox {
     #searchInput {
-      width: 280px;
+      width: 320px;
       height: 50px;
       background-color: $background;
       color: $text-color;
@@ -54,20 +54,31 @@ h1 {
     }
     .searchableList {
       width:320px;
-
       .file-list-container {
         max-height:858px;
         overflow: auto;
         margin:12px 0;
+        border-radius: 15px;
       }
+        .file-list-container::-webkit-scrollbar {
+          width: 20px;
+        }
+        .file-list-container::-webkit-scrollbar-track {
+          background-color: $bg-color;
+          border-radius: 0 15px 15px 0;
+        }
+        .file-list-container::-webkit-scrollbar-thumb {
+          border-radius: 15px;
+          background: $bg-btn2;
+          box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
+        }
       .file-list {
         background-color: $bg-color;
         position: relative;
         top:0;
         padding: 10px;
-        margin:0px 4px 8px 0;
-        border: 0;
-        border-radius: 15px;
+        margin: 0;
+        border-bottom: 1px solid $bg-btn2;
         outline: none;
         color: $text-color;
         font-size: 18px;
@@ -85,6 +96,9 @@ h1 {
           padding: 5px;
           list-style: none;
         }
+      }
+      .file-list:last-child {
+        border:none;
       }
       .is-hidden {
         display: none !important;
@@ -160,8 +174,19 @@ h1 {
         color: $text-color;
         font-size: 20px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-
       }
+        .code::-webkit-scrollbar {
+          width:20px;
+        }
+        .code::-webkit-scrollbar-track {
+            background-color: $bg-color;
+            border-radius: 15px;
+        }
+        .code::-webkit-scrollbar-thumb {
+          border-radius: 15px;
+          background: $bg-btn2;
+          box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
+        }
       .btn-copy {
         width: 190px;
         height: 50px;
@@ -209,6 +234,7 @@ h1 {
   .footer {
     .footerTitle {
       color:$bg-btn2;
+      cursor:default;
     }
     div {
       display: flex;

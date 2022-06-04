@@ -22,7 +22,7 @@ h1 {
   justify-content: center;
 }
 .app .searchBox #searchInput {
-  width: 280px;
+  width: 320px;
   height: 50px;
   background-color: #ffffff;
   color: black;
@@ -40,15 +40,27 @@ h1 {
   max-height: 858px;
   overflow: auto;
   margin: 12px 0;
+  border-radius: 15px;
+}
+.app .searchBox .searchableList .file-list-container::-webkit-scrollbar {
+  width: 20px;
+}
+.app .searchBox .searchableList .file-list-container::-webkit-scrollbar-track {
+  background-color: #e8f9fd;
+  border-radius: 0 15px 15px 0;
+}
+.app .searchBox .searchableList .file-list-container::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: #2155cd;
+  box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.4);
 }
 .app .searchBox .searchableList .file-list {
   background-color: #e8f9fd;
   position: relative;
   top: 0;
   padding: 10px;
-  margin: 0px 4px 8px 0;
-  border: 0;
-  border-radius: 15px;
+  margin: 0;
+  border-bottom: 1px solid #2155cd;
   outline: none;
   color: black;
   font-size: 18px;
@@ -66,6 +78,9 @@ h1 {
 .app .searchBox .searchableList .file-list li {
   padding: 5px;
   list-style: none;
+}
+.app .searchBox .searchableList .file-list:last-child {
+  border: none;
 }
 .app .searchBox .searchableList .is-hidden {
   display: none !important;
@@ -141,6 +156,18 @@ h1 {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.app .searchResult .wrapCode .code::-webkit-scrollbar {
+  width: 20px;
+}
+.app .searchResult .wrapCode .code::-webkit-scrollbar-track {
+  background-color: #e8f9fd;
+  border-radius: 15px;
+}
+.app .searchResult .wrapCode .code::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: #2155cd;
+  box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.4);
+}
 .app .searchResult .wrapCode .btn-copy {
   width: 190px;
   height: 50px;
@@ -185,6 +212,7 @@ h1 {
 }
 .app .footerBox .footer .footerTitle {
   color: #2155cd;
+  cursor: default;
 }
 .app .footerBox .footer div {
   display: flex;
