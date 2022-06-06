@@ -1,4 +1,4 @@
-export default function footer() {
+export default function Footer() {
     const footer = document.querySelector(".footerBox");
 
     let template = `

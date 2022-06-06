@@ -104,6 +104,15 @@ h1 {
         display: none !important;
       }
     }
+    .searchPhrases {
+      width:320px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      font-family:fantasy; 
+      color:#3c6382;
+      margin: 20px 0;
+    }
   }
   //searchResult
   .searchResult {
@@ -254,6 +263,9 @@ h1 {
     position: absolute;
     right:0px;
     bottom:0px;
+    a{
+      font-size: 0;
+    }
     .footerLogo {
       height:50px;
       max-width:50px;
