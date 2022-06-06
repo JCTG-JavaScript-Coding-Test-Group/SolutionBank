@@ -15,11 +15,21 @@ h1 {
   border-bottom: 4px solid #2155cd;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  align-items: center;
+  color: #0aa1dd;
+  font-size: 18px;
+}
+
 .app {
   display: flex;
   width: 1130px;
   margin: 0 auto;
 }
+
 .app .searchBox #searchInput {
   width: 280px;
   height: 50px;
@@ -32,6 +42,7 @@ h1 {
   outline: none;
   padding: 0 10px;
 }
+
 .app .searchBox .searchableList .file-list {
   background-color: #e8f9fd;
   padding: 10px;
@@ -42,40 +53,49 @@ h1 {
   font-size: 18px;
   font-weight: 700;
 }
+
 .app .searchBox .searchableList .file-list .levelTitle {
   color: #2155cd;
   font-size: 22px;
   font-weight: 700;
   cursor: default;
 }
+
 .app .searchBox .searchableList .file-list .file-list-item {
   cursor: pointer;
 }
+
 .app .searchBox .searchableList .file-list li {
   padding: 5px;
   list-style: none;
 }
+
 .app .searchBox .searchableList .is-hidden {
   display: none !important;
 }
+
 .app .searchResult {
   margin-left: 50px;
   width: 800px;
 }
+
 .app .searchResult .solutionNavigator {
   display: flex;
   float: right;
   position: relative;
   top: 55px;
 }
+
 .app .searchResult .solutionNavigator button:first-child {
   border-radius: 50px 15px 15px 50px;
   background: linear-gradient(90deg, #0aa1dd, #2155cd);
 }
+
 .app .searchResult .solutionNavigator button:last-child {
   border-radius: 15px 50px 50px 15px;
   background: linear-gradient(90deg, #2155cd, #0aa1dd);
 }
+
 .app .searchResult .solutionNavigator > button {
   width: 150px;
   height: 50px;
@@ -87,15 +107,18 @@ h1 {
   border: 0;
   color: #ffffff;
 }
+
 .app .searchResult .solutionNavigator .btnPrevSolution,
 .app .searchResult .solutionNavigator .btnNextSolution {
   cursor: pointer;
 }
+
 .app .searchResult .solutionNavigator .btnPrevSolution-inactive,
 .app .searchResult .solutionNavigator .btnNextSolution-inactive {
   opacity: 0.4;
   cursor: not-allowed;
 }
+
 .app .searchResult .file-title {
   display: flex;
   align-items: center;
@@ -112,9 +135,11 @@ h1 {
   outline: none;
   color: black;
 }
+
 .app .searchResult .wrapCode {
   position: relative;
 }
+
 .app .searchResult .wrapCode .code {
   background-color: #e8f9fd;
   padding: 10px;
@@ -128,6 +153,7 @@ h1 {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .app .searchResult .wrapCode .btn-copy {
   width: 190px;
   height: 50px;
@@ -145,6 +171,7 @@ h1 {
   border-radius: 15px;
   cursor: pointer;
 }
+
 .app .searchResult .wrapCode .isCopied {
   position: absolute;
   top: -60px;
@@ -158,5 +185,3 @@ h1 {
   padding: 0 6px;
   border-radius: 15px;
 }
-
-/*# sourceMappingURL=style.css.map */

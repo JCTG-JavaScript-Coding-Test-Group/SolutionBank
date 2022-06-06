@@ -32,6 +32,15 @@ h1 {
   border-bottom: 4px solid $border-levelTitle;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  align-items: center;
+  color: #0aa1dd;
+  font-size: 18px;
+}
+
 .app {
   display: flex;
   width: 1130px;
@@ -114,7 +123,7 @@ h1 {
       .btnPrevSolution-inactive,
       .btnNextSolution-inactive {
         opacity: 0.4;
-        cursor:  not-allowed;
+        cursor: not-allowed;
       }
     }
     .file-title {
@@ -147,7 +156,6 @@ h1 {
         color: $text-color;
         font-size: 20px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-
       }
       .btn-copy {
         width: 190px;
