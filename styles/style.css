@@ -94,6 +94,10 @@ h1 {
   color: #3c6382;
   margin: 20px 0;
 }
+.app .searchBox .searchPhrases > a {
+  text-decoration-line: none;
+  color: inherit;
+}
 .app .searchResult {
   margin-left: 50px;
   width: 800px;
@@ -207,7 +211,7 @@ h1 {
   padding: 0 6px;
   border-radius: 15px;
 }
-.app .footerBox {
+.app #footerBox {
   position: absolute;
   top: 1200px;
   min-width: 1200px;
@@ -219,32 +223,32 @@ h1 {
   font-family: fantasy;
   overflow: hidden;
 }
-.app .footerBox .footer .footerTitle {
+.app #footerBox .footer .footerTitle {
   color: #2155cd;
   cursor: default;
 }
-.app .footerBox .footer div {
+.app #footerBox .footer div {
   display: flex;
   position: relative;
   justify-content: center;
 }
-.app .footerBox .footer div .footerTitle {
+.app #footerBox .footer div .footerTitle {
   margin-right: 10px;
 }
-.app .footerBox .footer div a {
+.app #footerBox .footer div a {
   padding: 0 5px;
   text-decoration-line: none;
   color: inherit;
 }
-.app .footerBox .copyRight {
+.app #footerBox .copyRight {
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-.app .footerBox .copyRight a {
+.app #footerBox .copyRight a {
   font-size: 0;
 }
-.app .footerBox .copyRight .footerLogo {
+.app #footerBox .copyRight .footerLogo {
   height: 50px;
   max-width: 50px;
   margin: 0 10px 8px 4px;

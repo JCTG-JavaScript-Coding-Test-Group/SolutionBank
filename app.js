@@ -7,7 +7,7 @@ const init = async () => {
   $app.innerHTML = `
     <div class="searchBox"></div>
     <div class="searchResult"></div>
-    <footer class="footerBox"></footer>
+    <footer id="footerBox"></footer>
   `;
   const $searchBox = new SearchBox();
   $searchBox.render();

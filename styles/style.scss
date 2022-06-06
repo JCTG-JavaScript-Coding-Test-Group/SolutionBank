@@ -112,6 +112,10 @@ h1 {
       font-family:fantasy; 
       color:#3c6382;
       margin: 20px 0;
+    > a {
+      text-decoration-line: none;
+      color: inherit;
+    }
     }
   }
   //searchResult
@@ -229,7 +233,7 @@ h1 {
     }
   }
   //footer
-  .footerBox{
+  #footerBox{
     position:absolute;
     top:1200px;
     min-width:1200px;
