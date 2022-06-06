@@ -22,4 +22,4 @@ const loading = async () => {
   $loading.style.display = 'none';
 };
 
-init();
+loading();
