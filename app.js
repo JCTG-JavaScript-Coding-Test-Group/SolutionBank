@@ -9,7 +9,7 @@ const init = async () => {
     <div class="searchResult"></div>
   `;
   const $searchBox = new SearchBox();
-  $searchBox.render();
+  await $searchBox.render();
 };
 
 const loading = async () => {
