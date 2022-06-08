@@ -78,7 +78,7 @@ h1 {
         }
         .file-list-container::-webkit-scrollbar-thumb {
           border-radius: 15px;
-          background: $bg-btn2;
+          background: $bg-btn1;
           box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
         }
       .file-list {
@@ -118,7 +118,7 @@ h1 {
       text-align: center;
       font-size: 20px;
       font-weight: 600;
-      font-family:fantasy; 
+      font-family: 'Noto Sans KR', sans-serif;
       color:#3c6382;
       margin: 20px 0;
     > a {
@@ -195,7 +195,7 @@ h1 {
         outline: none;
         color: $text-color;
         font-size: 20px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
       }
         .code::-webkit-scrollbar {
           width:20px;
@@ -206,7 +206,8 @@ h1 {
         }
         .code::-webkit-scrollbar-thumb {
           border-radius: 15px;
-          background: $bg-btn2;
+          background: $bg-btn1;
+          
           box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
         }
       .btn-copy {
@@ -250,8 +251,8 @@ h1 {
     background: $bg-footer;
     padding:10px;
     font-size: 18px;
-    font-weight: 550;
-    font-family:fantasy; 
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
     overflow:hidden;
   .footer {
     .footerTitle {
@@ -272,7 +273,7 @@ h1 {
       }
     }
   }
-  .copyRight {
+  .logoBox {
     position: absolute;
     right:0px;
     bottom:0px;
