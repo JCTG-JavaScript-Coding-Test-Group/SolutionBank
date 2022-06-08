@@ -249,15 +249,15 @@ h1 {
   text-decoration-line: none;
   color: inherit;
 }
-.app #footerBox .copyRight {
+.app #footerBox .logoBox {
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-.app #footerBox .copyRight a {
+.app #footerBox .logoBox a {
   font-size: 0;
 }
-.app #footerBox .copyRight .footerLogo {
+.app #footerBox .logoBox .footerLogo {
   height: 50px;
   max-width: 50px;
   margin: 0 10px 8px 4px;
