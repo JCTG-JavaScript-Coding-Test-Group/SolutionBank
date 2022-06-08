@@ -13,9 +13,9 @@ export default function Footer() {
         </div>
         <div class="contributor">
             <div class="contributorTitle footerTitle" title="기여자">Contributor</div>
-            <a href="https://github.com/codeisneverodd">김경현</a>
-            <a href="https://github.com/chaerin-dev">김채린</a>
-            <a href="https://github.com/yongchanson">손용찬</a>
+            <a href="https://github.com/codeisneverodd">codeisneverodd</a>
+            <a href="https://github.com/chaerin-dev">chaerin.dev</a>
+            <a href="https://github.com/yongchanson">yongchanson</a>
         </div>
             <div>해당 페이지의 해답을 자신의 저작물에 추가할 수 있지만 반드시 본 <a href="{{__레포지토리주소__}}">Repository</a>의 주소를 명시하여야합니다.</div>
             <div>모든 문제의 저작권은 프로그래머스에 있습니다.</div>
