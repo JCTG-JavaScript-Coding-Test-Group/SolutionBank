@@ -15,12 +15,22 @@ h1 {
   border-bottom: 4px solid #2155cd;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  align-items: center;
+  color: #0aa1dd;
+  font-size: 18px;
+}
+
 .app {
   display: flex;
   width: 1170px;
   margin: 0 auto;
   justify-content: center;
 }
+
 .app .searchBox #searchInput {
   width: 320px;
   height: 50px;
@@ -33,27 +43,33 @@ h1 {
   outline: none;
   padding: 0 10px;
 }
+
 .app .searchBox .searchableList {
   width: 320px;
 }
+
 .app .searchBox .searchableList .file-list-container {
   max-height: 858px;
   overflow: auto;
   margin: 12px 0;
   border-radius: 15px;
 }
+
 .app .searchBox .searchableList .file-list-container::-webkit-scrollbar {
   width: 20px;
 }
+
 .app .searchBox .searchableList .file-list-container::-webkit-scrollbar-track {
   background-color: #e8f9fd;
   border-radius: 0 15px 15px 0;
 }
+
 .app .searchBox .searchableList .file-list-container::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background: #2155cd;
   box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.4);
 }
+
 .app .searchBox .searchableList .file-list {
   background-color: #e8f9fd;
   position: relative;
@@ -66,25 +82,31 @@ h1 {
   font-size: 18px;
   font-weight: 700;
 }
+
 .app .searchBox .searchableList .file-list .levelTitle {
   color: #2155cd;
   font-size: 22px;
   font-weight: 700;
   cursor: default;
 }
+
 .app .searchBox .searchableList .file-list .file-list-item {
   cursor: pointer;
 }
+
 .app .searchBox .searchableList .file-list li {
   padding: 5px;
   list-style: none;
 }
+
 .app .searchBox .searchableList .file-list:last-child {
   border: none;
 }
+
 .app .searchBox .searchableList .is-hidden {
   display: none !important;
 }
+
 .app .searchBox .searchPhrases {
   width: 320px;
   text-align: center;
@@ -94,28 +116,34 @@ h1 {
   color: #3c6382;
   margin: 20px 0;
 }
+
 .app .searchBox .searchPhrases > a {
   text-decoration-line: none;
   color: inherit;
 }
+
 .app .searchResult {
   margin-left: 50px;
   width: 800px;
 }
+
 .app .searchResult .solutionNavigator {
   display: flex;
   float: right;
   position: relative;
   top: 55px;
 }
+
 .app .searchResult .solutionNavigator button:first-child {
   border-radius: 50px 15px 15px 50px;
   background: linear-gradient(90deg, #0aa1dd, #2155cd);
 }
+
 .app .searchResult .solutionNavigator button:last-child {
   border-radius: 15px 50px 50px 15px;
   background: linear-gradient(90deg, #2155cd, #0aa1dd);
 }
+
 .app .searchResult .solutionNavigator > button {
   width: 150px;
   height: 50px;
@@ -127,15 +155,18 @@ h1 {
   border: 0;
   color: #ffffff;
 }
+
 .app .searchResult .solutionNavigator .btnPrevSolution,
 .app .searchResult .solutionNavigator .btnNextSolution {
   cursor: pointer;
 }
+
 .app .searchResult .solutionNavigator .btnPrevSolution-inactive,
 .app .searchResult .solutionNavigator .btnNextSolution-inactive {
   opacity: 0.4;
   cursor: not-allowed;
 }
+
 .app .searchResult .file-title {
   display: flex;
   align-items: center;
@@ -152,9 +183,11 @@ h1 {
   outline: none;
   color: black;
 }
+
 .app .searchResult .wrapCode {
   position: relative;
 }
+
 .app .searchResult .wrapCode .code {
   background-color: #e8f9fd;
   padding: 10px;
@@ -169,18 +202,22 @@ h1 {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .app .searchResult .wrapCode .code::-webkit-scrollbar {
   width: 20px;
 }
+
 .app .searchResult .wrapCode .code::-webkit-scrollbar-track {
   background-color: #e8f9fd;
   border-radius: 15px;
 }
+
 .app .searchResult .wrapCode .code::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background: #2155cd;
   box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.4);
 }
+
 .app .searchResult .wrapCode .btn-copy {
   width: 190px;
   height: 50px;
@@ -198,6 +235,7 @@ h1 {
   border-radius: 15px;
   cursor: pointer;
 }
+
 .app .searchResult .wrapCode .isCopied {
   position: absolute;
   top: -60px;
@@ -211,6 +249,7 @@ h1 {
   padding: 0 6px;
   border-radius: 15px;
 }
+
 .app #footerBox {
   position: absolute;
   top: 1200px;
@@ -258,3 +297,4 @@ h1 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
