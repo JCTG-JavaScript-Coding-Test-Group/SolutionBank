@@ -78,7 +78,7 @@ h1 {
         }
         .file-list-container::-webkit-scrollbar-thumb {
           border-radius: 15px;
-          background: $bg-btn2;
+          background: $bg-btn1;
           box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
         }
       .file-list {
@@ -206,7 +206,8 @@ h1 {
         }
         .code::-webkit-scrollbar-thumb {
           border-radius: 15px;
-          background: $bg-btn2;
+          background: $bg-btn1;
+          
           box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
         }
       .btn-copy {
