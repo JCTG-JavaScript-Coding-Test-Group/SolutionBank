@@ -1,49 +1,60 @@
-//TODO: api 함수 및 상수 분리
-import SearchResult from '../../SearchResult/components/index.js';
-import { getFileList } from '../utils/api.js';
+import { getFileContent, getFileList } from "../utils/api.js";
+import { splitCodeToSolutions } from "../utils/format.js";
+import { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { solutionState, loadingState } from "../../index.js";
 
-const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
-export function SearchableList() {
-  const $searchableList = document.querySelector('.searchableList');
-  this.render = async () => {
-    $searchableList.innerHTML = `
-      <div class="file-list-container"></div>
-    `;
-    const $fileListContainer = document.querySelector('.file-list-container');
-    await fillList();
-    async function fillList() {
-      const fileList = {};
-      for (const level of POSSIBLE_LEVELS) {
-        fileList[level] = await getFileList(level);
-        delete fileList[level][0];
-      }
-      $fileListContainer.innerHTML = `
-          ${POSSIBLE_LEVELS.map(
-            level => `
-          <ul class= "file-list ${`level-${level}`}">
-          <div class="levelTitle">[level ${level}]</div>
-            ${fileList[level]
-              .map(
-                file =>
-                  `<li class="file-list-item ${`${file.name}`}">${file.name
-                    .slice(0, file.name.length - 3)
-                    .replaceAll('-', ' ')}</li>`,
-              )
-              .join('')}
-          </ul>`,
-          ).join('')}
-        `;
+export default function SearchableList() {
+  let [fileListHTML, changeState] = useState("");
+  const setSolutionInfo = useSetRecoilState(solutionState);
+  const setLoadingState = useSetRecoilState(loadingState);
+
+  // TODO: ``부분 수정 필요..
+  (async function fillList() {
+    const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
+    const fileList = {};
+    for (const level of POSSIBLE_LEVELS) {
+      fileList[level] = await getFileList(level);
+      delete fileList[level][0];
     }
+    changeState(
+      (fileListHTML = POSSIBLE_LEVELS.map(
+        (level) => `
+      <ul class= "file-list ${`level-${level}`}">
+      <div class="levelTitle">[level ${level}]</div>
+        ${fileList[level]
+          .map(
+            (file) =>
+              `<li class="file-list-item ${`${file.name}`}">${file.name
+                .slice(0, file.name.length - 3)
+                .replaceAll("-", " ")}</li>`
+          )
+          .join("")}
+      </ul>`
+      ).join(""))
+    );
+    setLoadingState(false);
+  })();
 
-    $fileListContainer.addEventListener('click', e => {
-      if (e.target.tagName !== 'LI') return;
-      const level = e.target.parentNode.classList[1].slice(-1);
-      const fileName = e.target.classList[1];
-      const $searchResult = new SearchResult({
-        level,
-        fileName,
-      });
-      $searchResult.render();
+  async function showResult(e) {
+    if (e.target.tagName !== "LI") return;
+    const level = e.target.parentNode.classList[1].slice(-1);
+    const fileName = e.target.classList[1];
+    const solution = splitCodeToSolutions(await getFileContent(level, fileName));
+    setSolutionInfo({
+      level: level,
+      fileName: fileName,
+      solution: solution,
     });
-  };
+  }
+
+  return (
+    <div className="searchableList">
+      <div
+        className="file-list-container"
+        onClick={showResult}
+        dangerouslySetInnerHTML={{ __html: fileListHTML }}
+      ></div>
+    </div>
+  );
 }
