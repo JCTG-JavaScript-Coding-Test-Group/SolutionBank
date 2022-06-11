@@ -1,14 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RecoilRoot, atom } from "recoil";
 import App from "./App";
 
+export const solutionState = atom({
+  key: "solutionState",
+  default: {
+    level: 1,
+    fileName: "",
+    solution: [],
+  },
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+export const solutionNoState = atom({
+  key: "solutionNoState",
+  default: 0,
+});
+
+export const loadingState = atom({
+  key: "loadingState",
+  default: true,
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <h1>🔍 프로그래머스 해설 은행</h1>
-    <div className="loading"/>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>
 );
-

@@ -62,29 +62,29 @@ h1 {
       padding: 0 10px;
     }
     .searchableList {
-      width:320px;
+      width: 320px;
       .file-list-container {
-        max-height:858px;
+        max-height: 858px;
         overflow: auto;
-        margin:12px 0;
+        margin: 12px 0;
         border-radius: 15px;
       }
-        .file-list-container::-webkit-scrollbar {
-          width: 20px;
-        }
-        .file-list-container::-webkit-scrollbar-track {
-          background-color: $bg-color;
-          border-radius: 0 15px 15px 0;
-        }
-        .file-list-container::-webkit-scrollbar-thumb {
-          border-radius: 15px;
-          background: $bg-btn2;
-          box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
-        }
+      .file-list-container::-webkit-scrollbar {
+        width: 20px;
+      }
+      .file-list-container::-webkit-scrollbar-track {
+        background-color: $bg-color;
+        border-radius: 0 15px 15px 0;
+      }
+      .file-list-container::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+        background: $bg-btn2;
+        box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
+      }
       .file-list {
         background-color: $bg-color;
         position: relative;
-        top:0;
+        top: 0;
         padding: 10px;
         margin: 0;
         border-bottom: 1px solid $bg-btn2;
@@ -107,24 +107,24 @@ h1 {
         }
       }
       .file-list:last-child {
-        border:none;
+        border: none;
       }
       .is-hidden {
         display: none !important;
       }
     }
     .searchPhrases {
-      width:320px;
+      width: 320px;
       text-align: center;
       font-size: 20px;
       font-weight: 600;
-      font-family:fantasy; 
-      color:#3c6382;
+      font-family: fantasy;
+      color: #3c6382;
       margin: 20px 0;
-    > a {
-      text-decoration-line: none;
-      color: inherit;
-    }
+      > a {
+        text-decoration-line: none;
+        color: inherit;
+      }
     }
   }
   //searchResult
@@ -188,7 +188,7 @@ h1 {
         padding: 10px;
         margin-top: 70px;
         width: 100%;
-        max-height:800px;
+        max-height: 800px;
         overflow: auto;
         border: 0;
         border-radius: 15px;
@@ -197,18 +197,18 @@ h1 {
         font-size: 20px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-        .code::-webkit-scrollbar {
-          width:20px;
-        }
-        .code::-webkit-scrollbar-track {
-            background-color: $bg-color;
-            border-radius: 15px;
-        }
-        .code::-webkit-scrollbar-thumb {
-          border-radius: 15px;
-          background: $bg-btn2;
-          box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
-        }
+      .code::-webkit-scrollbar {
+        width: 20px;
+      }
+      .code::-webkit-scrollbar-track {
+        background-color: $bg-color;
+        border-radius: 15px;
+      }
+      .code::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+        background: $bg-btn2;
+        box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
+      }
       .btn-copy {
         width: 190px;
         height: 50px;
@@ -242,51 +242,51 @@ h1 {
     }
   }
   //footer
-  #footerBox{
-    position:absolute;
-    top:1200px;
-    min-width:1200px;
-    width:100%;
+  #footerBox {
+    position: absolute;
+    top: 1200px;
+    min-width: 1200px;
+    width: 100%;
     background: $bg-footer;
-    padding:10px;
+    padding: 10px;
     font-size: 18px;
     font-weight: 550;
-    font-family:fantasy; 
-    overflow:hidden;
-  .footer {
-    .footerTitle {
-      color:$bg-btn2;
-      cursor:default;
-    }
-    div {
-      display: flex;
-      position: relative;
-      justify-content: center;
+    font-family: fantasy;
+    overflow: hidden;
+    .footer {
       .footerTitle {
-        margin-right:10px;
+        color: $bg-btn2;
+        cursor: default;
       }
-      a{
-        padding: 0 5px;
-        text-decoration-line: none;
-        color: inherit;
+      div {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        .footerTitle {
+          margin-right: 10px;
+        }
+        a {
+          padding: 0 5px;
+          text-decoration-line: none;
+          color: inherit;
+        }
+      }
+    }
+    .copyRight {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      a {
+        font-size: 0;
+      }
+      .footerLogo {
+        height: 50px;
+        max-width: 50px;
+        margin: 0 10px 8px 4px;
+        overflow: hidden;
+        font-size: 14px;
+        cursor: pointer;
       }
     }
   }
-  .copyRight {
-    position: absolute;
-    right:0px;
-    bottom:0px;
-    a{
-      font-size: 0;
-    }
-    .footerLogo {
-      height:50px;
-      max-width:50px;
-      margin:0 10px 8px 4px;
-      overflow: hidden;
-      font-size: 14px;
-      cursor:pointer;
-    }
-  }
-}
 }
