@@ -2,7 +2,7 @@ import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
 import { useState } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
-import { solutionState, solutionNoState } from '../index.js';
+import { solutionState, solutionNoState, loadingState } from '../index.js';
 import styled from 'styled-components';
 
 const SearchResultDiv = styled.div`
@@ -131,6 +131,7 @@ export default function SearchResult() {
   const [{ fileName, solution }] = useRecoilState(solutionState);
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
+  // const [solutionNo, setSolutionNo] = useState(0);
   let [copyMessage, changeCopyMessage] = useState();
 
   function copyCode(e) {

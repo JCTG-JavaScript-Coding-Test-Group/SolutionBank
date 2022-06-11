@@ -25,6 +25,7 @@ const LoadingChild = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export default function Loading() {
   const loading = useRecoilValue(loadingState);
   return loading ? (

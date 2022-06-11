@@ -1,8 +1,8 @@
 import { getFileContent, getFileList } from '../utils/api.js';
 import { splitCodeToSolutions } from '../utils/format.js';
 import { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { solutionState, loadingState } from '../../index.js';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { solutionState, loadingState, solutionNoState } from '../../index.js';
 import styled from 'styled-components';
 
 const SearchableListDiv = styled.div`
@@ -63,7 +63,8 @@ export default function SearchableList() {
   let [fileListHTML, changeState] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
   const setLoadingState = useSetRecoilState(loadingState);
-
+  const solutionNo = useRecoilValue(solutionNoState);
+  const setSolutionNo = useSetRecoilState(solutionNoState);
   // TODO: ``부분 수정 필요..
   (async function fillList() {
     const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
@@ -92,6 +93,7 @@ export default function SearchableList() {
   })();
 
   async function showResult(e) {
+    setSolutionNo(no => (no = 0));
     if (e.target.tagName !== 'LI') return;
     const level = e.target.parentNode.classList[1].slice(-1);
     const fileName = e.target.classList[1];
@@ -110,6 +112,7 @@ export default function SearchableList() {
       <FileListContainer
         className="file-list-container"
         onClick={showResult}
+        solutionNoState={0}
         dangerouslySetInnerHTML={{ __html: fileListHTML }}
       ></FileListContainer>
     </SearchableListDiv>
