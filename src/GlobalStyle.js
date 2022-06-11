@@ -7,8 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-    background: $background;
-    color: $text-color;
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.textColor};
+    height:100%;
     }
     
     h1 {

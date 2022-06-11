@@ -1,7 +1,7 @@
 import { CreateFuzzyMatcher } from '../utils/koreanFuzzy';
 import styled from 'styled-components';
 
-const SearchInputDiv = styled.div`
+const SearchInputDiv = styled.input`
   width: 320px;
   height: 50px;
   background-color: ${props => props.theme.background};
