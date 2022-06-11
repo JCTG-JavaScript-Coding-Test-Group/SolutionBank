@@ -1,12 +1,14 @@
+import { FooterDiv, FooterTitle, FooterInAnchor } from '../footer';
+
 export default function Issues({ repoLink }) {
   return (
-    <div class="Issues">
-      <div class="IssuesTitle footerTitle" title="이슈제보">
+    <FooterDiv className="Issues">
+      <FooterTitle className="IssuesTitle footerTitle" title="이슈제보">
         Issues
-      </div>
-      <a href={repoLink + '/issues'}>
+      </FooterTitle>
+      <FooterInAnchor href={repoLink + '/issues'}>
         https://github.com/codeisneverodd/programmers-coding-test/issues
-      </a>
-    </div>
+      </FooterInAnchor>
+    </FooterDiv>
   );
 }

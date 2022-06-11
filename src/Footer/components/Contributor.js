@@ -1,12 +1,20 @@
+import { FooterDiv, FooterTitle, FooterInAnchor } from '../footer';
+
 export default function Contributor() {
   return (
-    <div class="contributor">
-      <div class="contributorTitle footerTitle" title="기여자">
+    <FooterDiv className="contributor">
+      <FooterTitle className="contributorTitle footerTitle" title="기여자">
         Contributor
-      </div>
-      <a href="https://github.com/codeisneverodd">codeisneverodd</a>
-      <a href="https://github.com/chaerin-dev">chaerin.dev</a>
-      <a href="https://github.com/yongchanson">yongchanson</a>
-    </div>
+      </FooterTitle>
+      <FooterInAnchor href="https://github.com/codeisneverodd">
+        codeisneverodd
+      </FooterInAnchor>
+      <FooterInAnchor href="https://github.com/chaerin-dev">
+        chaerin.dev
+      </FooterInAnchor>
+      <FooterInAnchor href="https://github.com/yongchanson">
+        yongchanson
+      </FooterInAnchor>
+    </FooterDiv>
   );
 }
