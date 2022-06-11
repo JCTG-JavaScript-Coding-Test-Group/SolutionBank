@@ -132,8 +132,6 @@ export default function SearchResult() {
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
   let [copyMessage, changeCopyMessage] = useState();
-  let [prev, setprev] = useState(false);
-  let [next, setnext] = useState(false);
 
   function copyCode(e) {
     const src = e.target.previousElementSibling;
@@ -150,8 +148,7 @@ export default function SearchResult() {
     if (e.target.innerHTML === '다음 해설' && solutionNo < solution.length - 1)
       setSolutionNo(no => no + 1);
   }
-  // solutionNo > 0 ? setprev(true) : setprev(false);
-  console.log(solution.length);
+
   return (
     <SearchResultDiv className="searchResult">
       <SolutionNavigator className="solutionNavigator">

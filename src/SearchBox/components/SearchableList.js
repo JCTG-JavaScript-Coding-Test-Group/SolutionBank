@@ -63,7 +63,6 @@ export default function SearchableList() {
   let [fileListHTML, changeState] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
   const setLoadingState = useSetRecoilState(loadingState);
-  const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
   // TODO: ``부분 수정 필요..
   (async function fillList() {
