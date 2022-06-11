@@ -2,7 +2,7 @@ import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
 import { useState } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
-import { solutionState, solutionNoState, loadingState } from '../index.js';
+import { solutionState, solutionNoState } from '../index.js';
 import styled from 'styled-components';
 
 const SearchResultDiv = styled.div`
@@ -131,8 +131,9 @@ export default function SearchResult() {
   const [{ fileName, solution }] = useRecoilState(solutionState);
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
-  // const [solutionNo, setSolutionNo] = useState(0);
   let [copyMessage, changeCopyMessage] = useState();
+  let [prev, setprev] = useState(false);
+  let [next, setnext] = useState(false);
 
   function copyCode(e) {
     const src = e.target.previousElementSibling;
@@ -149,18 +150,25 @@ export default function SearchResult() {
     if (e.target.innerHTML === '다음 해설' && solutionNo < solution.length - 1)
       setSolutionNo(no => no + 1);
   }
-
+  // solutionNo > 0 ? setprev(true) : setprev(false);
+  console.log(solution.length);
   return (
     <SearchResultDiv className="searchResult">
       <SolutionNavigator className="solutionNavigator">
         <Button
-          className="btnPrevSolution-inactive"
+          className={
+            solutionNo > 0 ? 'btnPrevSolution' : 'btnPrevSolution-inactive'
+          }
           onClick={showdifferentSolution}
         >
           이전 해설
         </Button>
         <Button
-          className="btnPrevSolution-inactive"
+          className={
+            (solutionNo === solution.length - 1) | (solution.length === 0)
+              ? 'btnPrevSolution-inactive'
+              : 'btnPrevSolution'
+          }
           onClick={showdifferentSolution}
         >
           다음 해설
