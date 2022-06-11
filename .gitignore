@@ -2,5 +2,3 @@
 /node_modules
 /.vscode
 .prettierrc.json
-package-lock.json
-package.json

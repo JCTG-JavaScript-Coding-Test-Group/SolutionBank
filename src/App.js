@@ -1,7 +1,7 @@
-import SearchBox from "./SearchBox/SearchBox";
-import SearchResult from "./SearchResult/SearchResult";
-import Footer from "./Footer/Footer";
-import Loading from "./Loading";
+import SearchBox from './SearchBox/SearchBox';
+import SearchResult from './SearchResult/SearchResult';
+import Footer from './Footer/footer';
+import Loading from './Loading';
 
 export default function App() {
   return (
