@@ -15,12 +15,11 @@ const SolutionNavigator = styled.div`
   float: right;
   position: relative;
   top: 55px;
-  .btnPrevSolution,
-  .btnNextSolution {
+
+  .btnSolnMove {
     cursor: pointer;
   }
-  .btnPrevSolution-inactive,
-  .btnNextSolution-inactive {
+  .btnSolnMoveInactive {
     opacity: 0.4;
     cursor: not-allowed;
   }
@@ -153,18 +152,16 @@ export default function SearchResult() {
     <SearchResultDiv className="searchResult">
       <SolutionNavigator className="solutionNavigator">
         <Button
-          className={
-            solutionNo > 0 ? 'btnPrevSolution' : 'btnPrevSolution-inactive'
-          }
+          className={solutionNo > 0 ? 'btnSolnMove' : 'btnSolnMoveInactive'}
           onClick={showdifferentSolution}
         >
           이전 해설
         </Button>
         <Button
           className={
-            (solutionNo === solution.length - 1) | (solution.length === 0)
-              ? 'btnPrevSolution-inactive'
-              : 'btnPrevSolution'
+            solutionNo < solution.length - 1
+              ? 'btnSolnMove'
+              : 'btnSolnMoveInactive'
           }
           onClick={showdifferentSolution}
         >
