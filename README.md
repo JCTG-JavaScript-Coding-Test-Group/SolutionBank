@@ -25,3 +25,14 @@
 커밋 헤더-작업내용-본인이름
 
 예시: feat-readmeConfig-codeisneverodd
+
+## PR 컨벤션
+`[컴포넌트, 페이지, FIX, 디자인] 작업내용`
+
+예시: `[컴포넌트, FIX] 푸터 기능 수정, 오타 수정`
+
+## Merge 규칙
+Squash Merge 로 통일, Merge 타이틀은 PR 과 동일하게 유지
+
+![image-20220614163254981](https://tva1.sinaimg.cn/large/e6c9d24egy1h37t57t287j20ua0623z4.jpg)
+![image-20220614163318481](https://tva1.sinaimg.cn/large/e6c9d24egy1h37t5kuv5sj20su0dudh4.jpg)
