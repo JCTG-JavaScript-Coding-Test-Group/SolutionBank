@@ -12,8 +12,8 @@ const LoadingDiv = styled.div`
   align-items: center;
   color: #0aa1dd;
   font-size: 18px;
-  width: 100%;
-  height: 100%;
+  min-width: 2500px;
+  min-height: 2000px;
   z-index: 5;
   background-color: ${props => props.theme.background};
 `;
