@@ -1,14 +1,69 @@
-import { getFileContent, getFileList } from "../utils/api.js";
-import { splitCodeToSolutions } from "../utils/format.js";
-import { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { solutionState, loadingState } from "../../index.js";
+import { getFileContent, getFileList } from '../utils/api.js';
+import { splitCodeToSolutions } from '../utils/format.js';
+import { useState } from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { solutionState, loadingState, solutionNoState } from '../../index.js';
+import styled from 'styled-components';
+
+const SearchableListDiv = styled.div`
+  width: 320px;
+`;
+
+const FileListContainer = styled.div`
+  max-height: 858px;
+  overflow: auto;
+  margin: 12px 0;
+  border-radius: 15px;
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${props => props.theme.bgColor};
+    border-radius: 0 15px 15px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: ${props => props.theme.bgBtn1};
+    box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
+  }
+  .file-list {
+    background-color: ${props => props.theme.bgColor};
+    position: relative;
+    top: 0;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid ${props => props.theme.bgBtn2};
+    outline: none;
+    color: $text-color;
+    font-size: 18px;
+    font-weight: 700;
+    .levelTitle {
+      color: ${props => props.theme.borderLevelTitle};
+      font-size: 22px;
+      font-weight: 700;
+      cursor: default;
+    }
+    .file-list-item {
+      cursor: pointer;
+    }
+    li {
+      padding: 5px;
+      list-style: none;
+    }
+  }
+  .file-list:last-child {
+    border: none;
+  }
+  .is-hidden {
+    display: none !important;
+  }
+`;
 
 export default function SearchableList() {
-  let [fileListHTML, changeState] = useState("");
+  let [fileListHTML, changeState] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
   const setLoadingState = useSetRecoilState(loadingState);
-
+  const setSolutionNo = useSetRecoilState(solutionNoState);
   // TODO: ``부분 수정 필요..
   (async function fillList() {
     const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
@@ -19,28 +74,31 @@ export default function SearchableList() {
     }
     changeState(
       (fileListHTML = POSSIBLE_LEVELS.map(
-        (level) => `
+        level => `
       <ul class= "file-list ${`level-${level}`}">
       <div class="levelTitle">[level ${level}]</div>
         ${fileList[level]
           .map(
-            (file) =>
+            file =>
               `<li class="file-list-item ${`${file.name}`}">${file.name
                 .slice(0, file.name.length - 3)
-                .replaceAll("-", " ")}</li>`
+                .replaceAll('-', ' ')}</li>`,
           )
-          .join("")}
-      </ul>`
-      ).join(""))
+          .join('')}
+      </ul>`,
+      ).join('')),
     );
     setLoadingState(false);
   })();
 
   async function showResult(e) {
-    if (e.target.tagName !== "LI") return;
+    setSolutionNo(no => (no = 0));
+    if (e.target.tagName !== 'LI') return;
     const level = e.target.parentNode.classList[1].slice(-1);
     const fileName = e.target.classList[1];
-    const solution = splitCodeToSolutions(await getFileContent(level, fileName));
+    const solution = splitCodeToSolutions(
+      await getFileContent(level, fileName),
+    );
     setSolutionInfo({
       level: level,
       fileName: fileName,
@@ -49,12 +107,13 @@ export default function SearchableList() {
   }
 
   return (
-    <div className="searchableList">
-      <div
+    <SearchableListDiv className="searchableList">
+      <FileListContainer
         className="file-list-container"
         onClick={showResult}
+        solutionNoState={0}
         dangerouslySetInnerHTML={{ __html: fileListHTML }}
-      ></div>
-    </div>
+      ></FileListContainer>
+    </SearchableListDiv>
   );
 }
