@@ -13,7 +13,9 @@ const LoadingDiv = styled.div`
   color: #0aa1dd;
   font-size: 18px;
   min-width: 2500px;
+  width: 100%;
   min-height: 2000px;
+  height: 100%;
   z-index: 5;
   background-color: ${props => props.theme.background};
 `;
