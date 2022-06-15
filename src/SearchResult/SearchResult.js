@@ -6,8 +6,12 @@ import { solutionState, solutionNoState } from '../index.js';
 import styled from 'styled-components';
 
 const SearchResultDiv = styled.div`
-  margin-left: 50px;
+  margin-left: -200px;
   width: 800px;
+  display: inline-block;
+  position: absolute;
+  top: 178px;
+  left: 50%;
 `;
 
 const SolutionNavigator = styled.div`

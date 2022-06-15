@@ -20,4 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     border-bottom: 4px solid ${props => props.theme.borderLevelTitle};
     }
 
+    #root {
+    /* display: flex; */
+    /* width: 1170px; */
+    width:100%;
+    margin: 0 auto;
+    justify-content: center;
+    }
 `;

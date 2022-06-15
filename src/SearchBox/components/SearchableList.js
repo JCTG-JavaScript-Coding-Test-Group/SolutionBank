@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 const SearchableListDiv = styled.div`
   width: 320px;
+  display: inline;
 `;
 
 const FileListContainer = styled.div`
