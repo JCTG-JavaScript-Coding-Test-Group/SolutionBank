@@ -1,6 +1,7 @@
 import { FooterDiv, FooterTitle, FooterInAnchor } from '../footer';
+import { repoLink } from '../footer';
 
-export default function Issues({ repoLink }) {
+export default function Issues() {
   return (
     <FooterDiv className="Issues">
       <FooterTitle className="IssuesTitle footerTitle" title="이슈제보">

@@ -1,6 +1,7 @@
 import { FooterDiv, FooterInAnchor } from '../footer';
+import { repoLink } from '../footer';
 
-export default function CopyRight({ repoLink }) {
+export default function CopyRight() {
   return (
     <>
       <FooterDiv>

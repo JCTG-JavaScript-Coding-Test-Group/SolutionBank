@@ -1,6 +1,7 @@
 import gitHubLogoPath from '../../images/github.png';
 import programmersLogoPath from '../../images/programmers.png';
 import styled from 'styled-components';
+import { repoLink } from '../footer';
 
 const LogoBoxDiv = styled.div`
   position: absolute;
@@ -28,7 +29,7 @@ const FooterLogo = styled.img`
   cursor: pointer;
 `;
 
-export default function LogoBox({ repoLink }) {
+export default function LogoBox() {
   return (
     <LogoBoxDiv className="logoBox">
       <a href={repoLink} target="_blank">
