@@ -1,7 +1,7 @@
 import { CreateFuzzyMatcher } from '../utils/koreanFuzzy';
 import styled from 'styled-components';
 
-const SearchInputDiv = styled.input`
+const Input = styled.input`
   width: 320px;
   height: 50px;
   background-color: ${props => props.theme.background};
@@ -30,7 +30,7 @@ export default function SearchInput() {
 
   return (
     <div className="searchInput">
-      <SearchInputDiv
+      <Input
         type="search"
         id="searchInput"
         placeholder="문제 이름을 검색하세요."

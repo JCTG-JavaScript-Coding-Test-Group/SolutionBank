@@ -13,12 +13,10 @@ const Wrapper = styled.div`
 
 export default function SearchBox() {
   return (
-    // <div className="searchBox">
     <Wrapper>
       <SearchInput />
       <SearchableList />
       <SearchPhrases />
-      {/* </div> */}
     </Wrapper>
   );
 }

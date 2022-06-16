@@ -5,7 +5,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { solutionState, loadingState, solutionNoState } from '../../index.js';
 import styled from 'styled-components';
 
-const SearchableListDiv = styled.div`
+const Wrapper = styled.div`
   width: 320px;
   display: inline;
 `;
@@ -108,13 +108,13 @@ export default function SearchableList() {
   }
 
   return (
-    <SearchableListDiv className="searchableList">
+    <Wrapper>
       <FileListContainer
         className="file-list-container"
         onClick={showResult}
         solutionNoState={0}
         dangerouslySetInnerHTML={{ __html: fileListHTML }}
       ></FileListContainer>
-    </SearchableListDiv>
+    </Wrapper>
   );
 }

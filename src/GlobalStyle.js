@@ -21,8 +21,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #root {
-    /* display: flex; */
-    /* width: 1170px; */
     width:100%;
     margin: 0 auto;
     justify-content: center;

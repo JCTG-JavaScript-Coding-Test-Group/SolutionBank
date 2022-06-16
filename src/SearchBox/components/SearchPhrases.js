@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SearchPhrasesDiv = styled.div`
+const Wrapper = styled.div`
   width: 320px;
   text-align: center;
   font-size: 20px;
@@ -17,12 +17,12 @@ const Anchor = styled.div`
 
 export default function SearchPhrases() {
   return (
-    <SearchPhrasesDiv className="searchPhrases">
-      <Anchor href="#footerBox">
+    <Wrapper>
+      <Anchor>
         찾는 문제가 없으신가요?
         <br />
         Repository에 풀이를 제보해주세요
       </Anchor>
-    </SearchPhrasesDiv>
+    </Wrapper>
   );
 }
