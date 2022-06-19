@@ -60,6 +60,22 @@ const FileListContainer = styled.div`
   }
 `;
 
+// const FileList = styled.div`
+//   background-color: ${props => props.theme.bgColor};
+//   position: relative;
+//   top: 0;
+//   padding: 10px;
+//   margin: 0;
+//   border-bottom: 1px solid ${props => props.theme.bgBtn2};
+//   outline: none;
+//   color: $text-color;
+//   font-size: 18px;
+//   font-weight: 700;
+//   &:last-child {
+//     border: none;
+//   }
+// `;
+
 export default function SearchableList() {
   let [fileListHTML, changeState] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);

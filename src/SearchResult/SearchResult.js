@@ -1,6 +1,6 @@
 import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
 import { solutionState, solutionNoState } from '../index.js';
 import styled from 'styled-components';
@@ -19,14 +19,6 @@ const SolutionNavigator = styled.div`
   float: right;
   position: relative;
   top: 55px;
-
-  .btnSolnMove {
-    cursor: pointer;
-  }
-  .btnSolnMoveInactive {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
 `;
 
 const Button = styled.div`
@@ -38,6 +30,14 @@ const Button = styled.div`
   font-size: 25px;
   font-weight: 700;
   border: 0;
+  ${({ state }) => {
+    if (state) {
+      return 'opacity:1; cursor:pointer';
+    } else {
+      return 'opacity:0.4; cursor:not-allowed';
+    }
+  }};
+
   color: ${props => props.theme.textBtn};
   &:first-child {
     border-radius: 50px 15px 15px 50px;
@@ -135,7 +135,15 @@ export default function SearchResult() {
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
   let [copyMessage, changeCopyMessage] = useState();
+  const [prev, setPrev] = useState(false);
+  const [next, setNext] = useState(false);
 
+  useEffect(() => {
+    setPrev(solutionNo > 0 ? true : false);
+    setNext(solutionNo < solution.length - 1 ? true : false);
+  });
+
+  console.log(prev);
   function copyCode(e) {
     const src = e.target.previousElementSibling;
     copyText(src);
@@ -155,20 +163,10 @@ export default function SearchResult() {
   return (
     <SearchResultDiv className="searchResult">
       <SolutionNavigator className="solutionNavigator">
-        <Button
-          className={solutionNo > 0 ? 'btnSolnMove' : 'btnSolnMoveInactive'}
-          onClick={showdifferentSolution}
-        >
+        <Button state={prev} onClick={showdifferentSolution}>
           이전 해설
         </Button>
-        <Button
-          className={
-            solutionNo < solution.length - 1
-              ? 'btnSolnMove'
-              : 'btnSolnMoveInactive'
-          }
-          onClick={showdifferentSolution}
-        >
+        <Button state={next} onClick={showdifferentSolution}>
           다음 해설
         </Button>
       </SolutionNavigator>
