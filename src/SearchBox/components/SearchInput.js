@@ -29,13 +29,11 @@ export default function SearchInput() {
   }
 
   return (
-    <div className="searchInput">
-      <Input
-        type="search"
-        id="searchInput"
-        placeholder="문제 이름을 검색하세요."
-        onChange={search}
-      />
-    </div>
+    <Input
+      type="search"
+      id="searchInput"
+      placeholder="문제 이름을 검색하세요."
+      onChange={search}
+    />
   );
 }

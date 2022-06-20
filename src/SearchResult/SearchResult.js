@@ -143,7 +143,6 @@ export default function SearchResult() {
     setNext(solutionNo < solution.length - 1 ? true : false);
   });
 
-  console.log(prev);
   function copyCode(e) {
     const src = e.target.previousElementSibling;
     copyText(src);
@@ -161,8 +160,8 @@ export default function SearchResult() {
   }
 
   return (
-    <SearchResultDiv className="searchResult">
-      <SolutionNavigator className="solutionNavigator">
+    <SearchResultDiv>
+      <SolutionNavigator>
         <Button state={prev} onClick={showdifferentSolution}>
           이전 해설
         </Button>
@@ -170,15 +169,11 @@ export default function SearchResult() {
           다음 해설
         </Button>
       </SolutionNavigator>
-      <FileTitle className="file-title">
-        {formattedFileName(fileName)}
-      </FileTitle>
-      <WrapCode className="wrapCode">
-        <Code className="code">{solution[solutionNo]}</Code>
-        <ButtonCopy className="btn-copy" onClick={copyCode}>
-          코드 복사하기
-        </ButtonCopy>
-        <IsCopied className="isCopied">{copyMessage}</IsCopied>
+      <FileTitle>{formattedFileName(fileName)}</FileTitle>
+      <WrapCode>
+        <Code>{solution[solutionNo]}</Code>
+        <ButtonCopy onClick={copyCode}>코드 복사하기</ButtonCopy>
+        <IsCopied>{copyMessage}</IsCopied>
       </WrapCode>
     </SearchResultDiv>
   );
