@@ -126,7 +126,6 @@ export default function SearchableList() {
   return (
     <Wrapper>
       <FileListContainer
-        className="file-list-container"
         onClick={showResult}
         solutionNoState={0}
         dangerouslySetInnerHTML={{ __html: fileListHTML }}
