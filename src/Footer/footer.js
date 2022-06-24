@@ -40,14 +40,14 @@ export const repoLink =
 
 export default function Footer() {
   return (
-    <FooterBox id="footerBox">
-      <div className="footer">
-        <Repo repoLink={repoLink} />
-        <Issues repoLink={repoLink} />
+    <FooterBox>
+      <div>
+        <Repo />
+        <Issues />
         <Contributor />
-        <CopyRight repoLink={repoLink} />
+        <CopyRight />
       </div>
-      <LogoBox repoLink={repoLink} />
+      <LogoBox />
     </FooterBox>
   );
 }

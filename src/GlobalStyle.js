@@ -20,4 +20,9 @@ export const GlobalStyle = createGlobalStyle`
     border-bottom: 4px solid ${props => props.theme.borderLevelTitle};
     }
 
+    #root {
+    width:100%;
+    margin: 0 auto;
+    justify-content: center;
+    }
 `;

@@ -7,4 +7,5 @@ export const theme = {
   bgBtn1: '#0aa1dd',
   bgBtn2: '#2155cd',
   bgFooter: '#82ccdd',
+  phrasesColor: '#3c6382',
 };

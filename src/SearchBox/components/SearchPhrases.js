@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-const SearchPhrasesDiv = styled.div`
+const Wrapper = styled.div`
   width: 320px;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
   font-family: 'Noto Sans KR', sans-serif;
-  color: #3c6382;
+  color: ${props => props.theme.phrasesColor};
   margin: 20px 0;
 `;
 
@@ -17,12 +17,12 @@ const Anchor = styled.div`
 
 export default function SearchPhrases() {
   return (
-    <SearchPhrasesDiv className="searchPhrases">
-      <Anchor href="#footerBox">
+    <Wrapper>
+      <Anchor>
         찾는 문제가 없으신가요?
         <br />
         Repository에 풀이를 제보해주세요
       </Anchor>
-    </SearchPhrasesDiv>
+    </Wrapper>
   );
 }

@@ -5,8 +5,9 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { solutionState, loadingState, solutionNoState } from '../../index.js';
 import styled from 'styled-components';
 
-const SearchableListDiv = styled.div`
+const Wrapper = styled.div`
   width: 320px;
+  display: inline;
 `;
 
 const FileListContainer = styled.div`
@@ -59,6 +60,22 @@ const FileListContainer = styled.div`
   }
 `;
 
+// const FileList = styled.div`
+//   background-color: ${props => props.theme.bgColor};
+//   position: relative;
+//   top: 0;
+//   padding: 10px;
+//   margin: 0;
+//   border-bottom: 1px solid ${props => props.theme.bgBtn2};
+//   outline: none;
+//   color: $text-color;
+//   font-size: 18px;
+//   font-weight: 700;
+//   &:last-child {
+//     border: none;
+//   }
+// `;
+
 export default function SearchableList() {
   let [fileListHTML, changeState] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
@@ -107,13 +124,12 @@ export default function SearchableList() {
   }
 
   return (
-    <SearchableListDiv className="searchableList">
+    <Wrapper>
       <FileListContainer
-        className="file-list-container"
         onClick={showResult}
         solutionNoState={0}
         dangerouslySetInnerHTML={{ __html: fileListHTML }}
       ></FileListContainer>
-    </SearchableListDiv>
+    </Wrapper>
   );
 }

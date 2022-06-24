@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { loadingState } from './index.js';
 import styled from 'styled-components';
 
-const LoadingDiv = styled.div`
+const Wrapper = styled.div`
   display: flex;
   position: absolute;
   top: -50px;
@@ -12,13 +12,15 @@ const LoadingDiv = styled.div`
   align-items: center;
   color: #0aa1dd;
   font-size: 18px;
-  min-width: 2500px;
+  min-width: 1500px;
+  width: 100%;
   min-height: 2000px;
+  height: 100%;
   z-index: 5;
   background-color: ${props => props.theme.background};
 `;
 
-const LoadingChild = styled.div`
+const Content = styled.div`
   position: relative;
   top: 400px;
   align-items: center;
@@ -29,11 +31,11 @@ const LoadingChild = styled.div`
 export default function Loading() {
   const loading = useRecoilValue(loadingState);
   return loading ? (
-    <LoadingDiv className="loading">
-      <LoadingChild>
+    <Wrapper>
+      <Content>
         <img src={spinnerPath} alt="Loading..." />
         Loading…
-      </LoadingChild>
-    </LoadingDiv>
+      </Content>
+    </Wrapper>
   ) : null;
 }
