@@ -1,7 +1,7 @@
 import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
 import { useEffect, useState } from 'react';
-import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { solutionState, solutionNoState } from '../atom.js';
 import styled from 'styled-components';
 
