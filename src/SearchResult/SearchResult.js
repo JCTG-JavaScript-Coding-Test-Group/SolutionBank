@@ -131,7 +131,7 @@ const IsCopied = styled.div`
 `;
 
 export default function SearchResult() {
-  const [{ fileName, solution }] = useRecoilState(solutionState);
+  const { fileName, solution } = useRecoilValue(solutionState);
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
   const [copyMessage, changeCopyMessage] = useState();
