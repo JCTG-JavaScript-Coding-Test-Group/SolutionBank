@@ -1,7 +1,7 @@
 import { getFileContent, getFileList } from '../utils/api.js';
 import { splitCodeToSolutions } from '../utils/format.js';
 import { useState } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { solutionState, loadingState, solutionNoState } from '../../atom.js';
 import styled from 'styled-components';
 
