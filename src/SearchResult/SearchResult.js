@@ -1,7 +1,7 @@
 import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
 import { useEffect, useState } from 'react';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { solutionState, solutionNoState } from '../atom.js';
 import styled from 'styled-components';
 
@@ -132,8 +132,7 @@ const IsCopied = styled.div`
 
 export default function SearchResult() {
   const { fileName, solution } = useRecoilValue(solutionState);
-  const solutionNo = useRecoilValue(solutionNoState);
-  const setSolutionNo = useSetRecoilState(solutionNoState);
+  const [solutionNo, setSolutionNo] = useRecoilState(solutionNoState);
   const [copyMessage, changeCopyMessage] = useState();
   const [prev, setPrev] = useState(false);
   const [next, setNext] = useState(false);
@@ -154,9 +153,9 @@ export default function SearchResult() {
 
   function showdifferentSolution(e) {
     if (e.target.innerHTML === '이전 해설' && solutionNo > 0)
-      setSolutionNo(no => no - 1);
+      setSolutionNo(solutionNo - 1);
     if (e.target.innerHTML === '다음 해설' && solutionNo < solution.length - 1)
-      setSolutionNo(no => no + 1);
+      setSolutionNo(solutionNo + 1);
   }
 
   return (
