@@ -134,7 +134,7 @@ export default function SearchResult() {
   const [{ fileName, solution }] = useRecoilState(solutionState);
   const solutionNo = useRecoilValue(solutionNoState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
-  let [copyMessage, changeCopyMessage] = useState();
+  const [copyMessage, changeCopyMessage] = useState();
   const [prev, setPrev] = useState(false);
   const [next, setNext] = useState(false);
 
@@ -146,9 +146,9 @@ export default function SearchResult() {
   function copyCode(e) {
     const src = e.target.previousElementSibling;
     copyText(src);
-    changeCopyMessage((copyMessage = ' 📋 클립보드에 복사됨!'));
+    changeCopyMessage(' 📋 클립보드에 복사됨!');
     setTimeout(() => {
-      changeCopyMessage((copyMessage = ''));
+      changeCopyMessage('');
     }, 1000);
   }
 
