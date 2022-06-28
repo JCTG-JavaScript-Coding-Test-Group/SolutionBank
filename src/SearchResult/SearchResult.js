@@ -1,8 +1,8 @@
 import { formattedFileName } from './utils/format.js';
 import { copyText } from './utils/copyText.js';
 import { useEffect, useState } from 'react';
-import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
-import { solutionState, solutionNoState } from '../index.js';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { solutionState, solutionNoState } from '../atom.js';
 import styled from 'styled-components';
 
 const SearchResultDiv = styled.div`
@@ -131,10 +131,9 @@ const IsCopied = styled.div`
 `;
 
 export default function SearchResult() {
-  const [{ fileName, solution }] = useRecoilState(solutionState);
-  const solutionNo = useRecoilValue(solutionNoState);
-  const setSolutionNo = useSetRecoilState(solutionNoState);
-  let [copyMessage, changeCopyMessage] = useState();
+  const { fileName, solution } = useRecoilValue(solutionState);
+  const [solutionNo, setSolutionNo] = useRecoilState(solutionNoState);
+  const [copyMessage, changeCopyMessage] = useState();
   const [prev, setPrev] = useState(false);
   const [next, setNext] = useState(false);
 
@@ -146,17 +145,17 @@ export default function SearchResult() {
   function copyCode(e) {
     const src = e.target.previousElementSibling;
     copyText(src);
-    changeCopyMessage((copyMessage = ' 📋 클립보드에 복사됨!'));
+    changeCopyMessage(' 📋 클립보드에 복사됨!');
     setTimeout(() => {
-      changeCopyMessage((copyMessage = ''));
+      changeCopyMessage('');
     }, 1000);
   }
 
   function showdifferentSolution(e) {
     if (e.target.innerHTML === '이전 해설' && solutionNo > 0)
-      setSolutionNo(no => no - 1);
+      setSolutionNo(solutionNo - 1);
     if (e.target.innerHTML === '다음 해설' && solutionNo < solution.length - 1)
-      setSolutionNo(no => no + 1);
+      setSolutionNo(solutionNo + 1);
   }
 
   return (

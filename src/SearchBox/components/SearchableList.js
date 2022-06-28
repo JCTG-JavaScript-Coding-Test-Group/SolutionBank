@@ -1,8 +1,8 @@
 import { getFileContent, getFileList } from '../utils/api.js';
 import { splitCodeToSolutions } from '../utils/format.js';
 import { useState } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { solutionState, loadingState, solutionNoState } from '../../index.js';
+import { useSetRecoilState } from 'recoil';
+import { solutionState, loadingState, solutionNoState } from '../../atom.js';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -77,7 +77,7 @@ const FileListContainer = styled.div`
 // `;
 
 export default function SearchableList() {
-  let [fileListHTML, changeState] = useState('');
+  const [fileListHTML, setFileListHTML] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
   const setLoadingState = useSetRecoilState(loadingState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
@@ -89,8 +89,8 @@ export default function SearchableList() {
       fileList[level] = await getFileList(level);
       delete fileList[level][0];
     }
-    changeState(
-      (fileListHTML = POSSIBLE_LEVELS.map(
+    setFileListHTML(
+      POSSIBLE_LEVELS.map(
         level => `
       <ul class= "file-list ${`level-${level}`}">
       <div class="levelTitle">[level ${level}]</div>
@@ -103,7 +103,7 @@ export default function SearchableList() {
           )
           .join('')}
       </ul>`,
-      ).join('')),
+      ).join(''),
     );
     setLoadingState(false);
   })();

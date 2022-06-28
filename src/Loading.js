@@ -1,6 +1,6 @@
 import spinnerPath from './images/spinner.svg';
 import { useRecoilValue } from 'recoil';
-import { loadingState } from './index.js';
+import { loadingState } from './atom.js';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
