@@ -1,87 +1,63 @@
-import { getFileContent, getFileList } from '../utils/api.js';
-import { splitCodeToSolutions } from '../utils/format.js';
+import { getFileContent, getFileList } from '../../../SearchBox/utils/api.js';
+import { splitCodeToSolutions } from '../../../SearchBox/utils/format.js';
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { solutionState, loadingState, solutionNoState } from '../../atom.js';
+import { solutionState, loadingState, solutionNoState } from '../../../atom.js';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  width: 320px;
-  display: inline;
-`;
-
 const FileListContainer = styled.div`
-  max-height: 858px;
+  max-height: 50rem;
   overflow: auto;
   margin: 12px 0;
   border-radius: 15px;
-  &::-webkit-scrollbar {
-    width: 20px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: ${props => props.theme.bgColor};
-    border-radius: 0 15px 15px 0;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 15px;
-    background: ${props => props.theme.bgBtn1};
-    box-shadow: inset 2px 2px 5px 0 rgba(#ffffff, 0.4);
-  }
   .file-list {
-    background-color: ${props => props.theme.bgColor};
+    background-color: ${props => props.theme.darkGray};
     position: relative;
     top: 0;
-    padding: 10px;
-    margin: 0;
-    border-bottom: 1px solid ${props => props.theme.bgBtn2};
+    padding: 1rem;
     outline: none;
-    color: $text-color;
-    font-size: 18px;
-    font-weight: 700;
     .levelTitle {
       color: ${props => props.theme.borderLevelTitle};
-      font-size: 22px;
+      font-size: 1.8rem;
       font-weight: 700;
       cursor: default;
+    }
+    .levelTit .levelTitle:hover {
+      background-color: transparent;
     }
     .file-list-item {
       cursor: pointer;
     }
     li {
-      padding: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3rem;
+      border-radius: 1rem;
+      padding: 1rem;
+      font-size: 1.3rem;
       list-style: none;
     }
+    li:hover {
+      background-color: ${props => props.theme.blue};
+    }
   }
-  .file-list:last-child {
-    border: none;
+  .file-list::after {
+    content: '';
+    width: 10rem;
+    height: 5rem;
+    background-color: red;
   }
   .is-hidden {
     display: none !important;
   }
 `;
 
-// const FileList = styled.div`
-//   background-color: ${props => props.theme.bgColor};
-//   position: relative;
-//   top: 0;
-//   padding: 10px;
-//   margin: 0;
-//   border-bottom: 1px solid ${props => props.theme.bgBtn2};
-//   outline: none;
-//   color: $text-color;
-//   font-size: 18px;
-//   font-weight: 700;
-//   &:last-child {
-//     border: none;
-//   }
-// `;
-
 export default function SearchableList() {
   const [fileListHTML, setFileListHTML] = useState('');
   const setSolutionInfo = useSetRecoilState(solutionState);
   const setLoadingState = useSetRecoilState(loadingState);
   const setSolutionNo = useSetRecoilState(solutionNoState);
-  // TODO: ``부분 수정 필요..
   (async function fillList() {
     const POSSIBLE_LEVELS = [1, 2, 3, 4, 5];
     const fileList = {};
@@ -93,7 +69,8 @@ export default function SearchableList() {
       POSSIBLE_LEVELS.map(
         level => `
       <ul class= "file-list ${`level-${level}`}">
-      <div class="levelTitle">[level ${level}]</div>
+      <li class="levelTitle">Level ${level}</li>
+
         ${fileList[level]
           .map(
             file =>
@@ -124,12 +101,10 @@ export default function SearchableList() {
   }
 
   return (
-    <Wrapper>
-      <FileListContainer
-        onClick={showResult}
-        solutionNoState={0}
-        dangerouslySetInnerHTML={{ __html: fileListHTML }}
-      ></FileListContainer>
-    </Wrapper>
+    <FileListContainer
+      onClick={showResult}
+      solutionNoState={0}
+      dangerouslySetInnerHTML={{ __html: fileListHTML }}
+    />
   );
 }

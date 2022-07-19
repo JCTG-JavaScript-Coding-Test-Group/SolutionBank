@@ -1,5 +1,5 @@
-import SearchInput from './components/SearchInput';
-import SearchableList from './components/SearchableList';
+import SearchInput from '../pages/Home/components/SearchInput';
+import SearchableList from '../pages/Home/components/SearchableList';
 import SearchPhrases from './components/SearchPhrases';
 import styled from 'styled-components';
 

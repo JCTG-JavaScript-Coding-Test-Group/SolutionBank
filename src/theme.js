@@ -9,3 +9,14 @@ export const theme = {
   bgFooter: '#82ccdd',
   phrasesColor: '#3c6382',
 };
+export const programmersTheme = {
+  bgColor: '#2A3746',
+  textColor: '#fff',
+  textColorReversed: '#000',
+  inputBgColor: '#fff',
+  inputPlaceholderColor: '#48566A',
+  blue: '#2D74EB',
+  darkGray: '#48566A',
+  black: '#0E151B',
+  codeBg: '#363d43',
+};
